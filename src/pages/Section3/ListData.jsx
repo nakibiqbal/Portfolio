@@ -1,6 +1,6 @@
 import one from "../../assets/sundaeCreative.png";
 import two from "../../assets/hellboy.png"
-import three from "../../assets/ImageGallery3.png"
+import three from "../../assets/ImageGallery1.png"
 import four from "../../assets/ImageGallery2.png"
 import five from "../../assets/ImageGallery3.png"
 import six from "../../assets/ScrollParallax.png"
