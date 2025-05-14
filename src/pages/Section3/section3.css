@@ -1,0 +1,74 @@
+#image_reveal {
+  width: 100%;
+  height: 900px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.section3Content {
+  list-style: none;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+  overflow: visible;
+}
+.imgBgThreeParent {
+  position: absolute;
+  right: -7rem;
+  top: -20rem;
+  pointer-events: none;
+}
+img.bgImgThree {
+  width: 40rem;
+}
+
+.imgBgFourParent {
+  position: absolute;
+  left: -21rem;
+  bottom: -5rem;
+}
+.imgBgFourParent img {
+  width: 40rem;
+}
+
+@media (max-width: 1200px) {
+  .section3Content {
+    width: 100%;
+  }
+}
+@media (max-width: 982px) {
+  #image_reveal {
+    padding: 10rem 0rem;
+    height: 300rem;
+  }
+  .section3Content {
+    gap: 50px;
+  }
+  .imgBgThreeParent {
+    right: -7rem;
+    top: -15rem;
+  }
+  img.bgImgThree {
+    width: 30rem;
+  }
+  .imgBgFourParent {
+    left: -20rem;
+  }
+}
+
+@media (max-width: 500px) {
+  #image_reveal {
+    height: 240rem;
+  }
+  .section3Content {
+    gap: 10px;
+  }
+}

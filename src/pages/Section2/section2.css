@@ -1,0 +1,35 @@
+@import url("https://fonts.cdnfonts.com/css/super-commando");
+
+.section2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20rem;
+}
+.textBGwrapper {
+  display: flex;
+  overflow: hidden;
+}
+.textBGwrapper h1 {
+  color: #00c500;
+  font-size: 11rem;
+  width: 325rem;
+  animation: animate 20s linear infinite;
+  font-weight: 100;
+  font-family: "Blockstepped";
+  text-shadow: -30px -30px 19px #025802;
+}
+@keyframes animate {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.span {
+  color: white;
+  font-family: "Super Commando 3D";
+}

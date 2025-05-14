@@ -1,0 +1,55 @@
+#section4 {
+  width: 100%;
+  height: 500vh;
+  position: relative;
+}
+.imageWrapper {
+  position: sticky;
+  overflow: hidden;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  justify-content: center;
+}
+.texts {
+  display: flex;
+  mix-blend-mode: overlay;
+  width: 50vw;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.texts p {
+  font-family: "Quicksand";
+  font-size: 1.8vw;
+  font-weight: bolder;
+  color: #ffffffcc;
+}
+
+@media (max-width: 1300px) {
+  .texts {
+    width: 80%;
+  }
+  .texts p {
+    font-size: 3.5vh;
+  }
+}
+@media (max-width: 900px) {
+  .texts {
+    width: 90%;
+  }
+
+  .texts p {
+    font-size: 2.9vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .texts {
+    width: 90%;
+  }
+
+  .texts p {
+    font-size: 2.3vh;
+  }
+}

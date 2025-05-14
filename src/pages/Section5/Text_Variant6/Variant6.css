@@ -1,0 +1,26 @@
+.variant6 {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.variant6 p {
+  margin: 0;
+  padding: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+@media (max-width: 1500px) {
+  .variant6 p {
+    line-height: 1.7vw;
+  }
+}
+@media (max-width: 1000px) {
+  .variant6 p {
+    line-height: 2.3vw;
+  }
+}
+@media (max-width: 500px) {
+  .variant6 p {
+    line-height: 16px;
+  }
+}

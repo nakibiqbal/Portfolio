@@ -1,0 +1,142 @@
+.sec3Wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.8s cubic-bezier(0.87, 0, 0.13, 1);
+  position: relative;
+  mix-blend-mode: difference;
+  text-decoration: none;
+}
+.sec3Wrapper::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #00ff00;
+  bottom: 0px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.8s cubic-bezier(0.87, 0, 0.13, 1);
+}
+.scaleX {
+  position: absolute;
+  background: #007b00;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  transform-origin: left;
+}
+
+.FlipTextChild {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transform: translateX(0px);
+  transition: all 0.8s cubic-bezier(0.87, 0, 0.13, 1);
+  justify-content: center;
+}
+.sec3Wrapper:hover .FlipTextChild {
+  transform: translateX(50px);
+}
+.sec3Wrapper:hover .FlipTextChild h2::after {
+  transform: scaleX(1);
+}
+.sec3Wrapper:hover::after {
+  transform: scaleX(1);
+}
+.FlipTextChild h2 {
+  font-weight: 100;
+  color: green;
+  font-family: "Pixel Sans Serif";
+  font-size: 20px;
+  position: relative;
+}
+.FlipTextChild h2::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  content: "";
+  background: green;
+  transform: scaleX(0);
+  transform-origin: right;
+  right: 0;
+  mix-blend-mode: difference;
+  transition: all 0.8s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.FlipTextChild img {
+  display: none;
+}
+.viewBtn {
+  display: none;
+}
+@media (max-width: 982px) {
+  .sec3Wrapper {
+    mix-blend-mode: normal;
+    height: auto;
+  }
+  .FlipTextChild {
+    height: 100%;
+    width: 100%;
+    transform: translateX(0px);
+    transition: all 0.8s cubic-bezier(0.87, 0, 0.13, 1);
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+  }
+
+  .FlipTextChild h2 {
+    color: #00ff00;
+  }
+  .FlipTextChild img {
+    width: 100%;
+    height: 17rem;
+    object-fit: contain;
+    display: inline-block;
+  }
+  .viewBtn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: none;
+    width: 100%;
+    background: transparent;
+  }
+  .viewBtn a {
+    background: #00ff00;
+    padding: 1rem 1rem;
+    text-decoration: none;
+    color: black;
+  }
+
+  .sec3Wrapper:hover .FlipTextChild {
+    transform: none !important;
+  }
+  .FlipTextChild h2::after {
+    display: none;
+  }
+  .sec3Wrapper::after {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .FlipTextChild {
+    align-items: flex-start;
+  }
+  .FlipTextChild h2 {
+    font-size: 18px;
+  }
+  .FlipTextChild img {
+    height: 15rem;
+  }
+  .viewBtn {
+    justify-content: flex-end;
+  }
+}

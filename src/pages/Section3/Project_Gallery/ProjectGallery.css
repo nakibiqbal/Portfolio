@@ -1,0 +1,69 @@
+.parentBG {
+  width: 40rem;
+  height: 30rem;
+  background: #005000;
+  position: fixed;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  backdrop-filter: blur(10px);
+}
+.galleryContainer {
+  width: 35rem;
+  height: 18rem;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallerySlider {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all 0.8s cubic-bezier(0.87, 0, 0.13, 1);
+}
+.galleryImages {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.galleryImages img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.viewCursorBG,
+.viewCursorTxt {
+  background: green;
+  color: black;
+  font-size: 18px;
+  width: 100px;
+  height: 70px;
+  text-decoration: none;
+  font-family: "Pixel Sans Serif";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.viewCursorTxt {
+  background: transparent;
+  mix-blend-mode: normal;
+}
+
+@media (max-width: 982px) {
+  .parentBG,
+  .galleryContainer,
+  .viewCursorBG,
+  .viewCursorTxt {
+    display: none;
+  }
+}

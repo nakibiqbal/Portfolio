@@ -1,0 +1,141 @@
+section#section6 {
+  width: 100%;
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  padding: 1rem;
+  gap: 2rem;
+}
+.cardContainer {
+  width: 80rem;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-content: center;
+}
+.creative-tilt-card {
+  background: black;
+  width: 26rem;
+  height: 17rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 2rem;
+  transition: all 2s ease-out;
+  /* border: 1px solid rgba(255, 255, 255, 0.072); */
+  border: 1px solid green;
+}
+.card-content:hover {
+  border: 1px solid transparent;
+}
+.card-content h2 {
+  font-family: "Pixel Sans Serif";
+  font-size: 22px;
+  font-weight: lighter;
+}
+.card-content p {
+  font-family: "Quicksand";
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 22px;
+  color: #cacaca;
+}
+.shadow {
+  width: 9rem;
+  height: 9rem;
+  background: #00ff00;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  filter: blur(7rem);
+  pointer-events: none;
+  opacity: 1;
+}
+
+.bgImgParent {
+  width: 100%;
+  z-index: -1;
+  position: relative;
+}
+img.bgOne {
+  width: 40rem;
+  position: absolute;
+  top: -5%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  will-change: transform;
+  animation: bgOne 20s linear infinite;
+  mix-blend-mode: difference;
+}
+@keyframes bgOne {
+  0% {
+    filter: hue-rotate(200deg);
+  }
+  50% {
+    filter: hue-rotate(300deg);
+  }
+  100% {
+    filter: hue-rotate(200deg);
+  }
+}
+
+@media (min-width: 1920px) {
+  img.bgOne {
+    width: 35vw;
+  }
+}
+
+@media (max-width: 1440px) {
+  section#section6 {
+    height: 100%;
+  }
+  .cardContainer {
+    width: 90%;
+    padding: 0;
+  }
+}
+@media (max-width: 768px) {
+  .cardContainer {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 500px) {
+  .cardContainer {
+    width: 100%;
+    padding: 0;
+  }
+  .creative-tilt-card {
+    width: 100%;
+    height: 100%;
+  }
+  .card-content h2 {
+    font-size: 20px;
+  }
+  .card-content p {
+    font-size: 18px;
+  }
+  img.bgOne {
+    left: -10%;
+  }
+}

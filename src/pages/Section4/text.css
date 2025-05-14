@@ -1,0 +1,40 @@
+.aboutMe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0 0 0 / 60%);
+  padding: 0vw 15vw;
+  mix-blend-mode: darken;
+}
+.aboutMe h1 {
+  font-size: 3.35vw;
+  font-weight: 600;
+  font-family: "Quicksand";
+  text-transform: none;
+}
+
+.mainTxt {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0vw 1.3vw;
+}
+
+@media (max-width: 500px) {
+  .aboutMe {
+    padding: 0vw 10vw;
+  }
+  .mainTxt {
+    gap: 0vw 1.8vw;
+  }
+  .aboutMe h1 {
+    font-size: 5vw;
+  }
+}
