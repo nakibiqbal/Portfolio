@@ -1,14 +1,13 @@
+import { Suspense, lazy } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import edit2 from "../assets/edit2.jpg";
 import "./Navbar.css";
-import Items from "./Items";
+const Items = lazy(() => import("./Items"));
 import useScreenSize from "../hooks/ScreenSizeHook/useScreenSize";
 import { customEase } from "../Easings/customEase";
 import useStateHook from "../hooks/CustomStateHook/useStateHook";
 
 const Navbar = () => {
 
-    // const [isClick, setIsClick] = useState(false);
     const { isClick, setIsClick } = useStateHook()
     const isSmallScreen = useScreenSize(1538);
 
@@ -66,12 +65,14 @@ const Navbar = () => {
                                     <div className="navItems">
 
                                         <div className="navItemsChild">
-                                            <Items setIsClick={setIsClick} />
+                                            <Suspense fallback={<h1>Loading...</h1>}>
+                                                <Items setIsClick={setIsClick} />
+                                            </Suspense>
 
                                         </div>
                                         <motion.div
                                             className="nakibIqbal"
-                                            style={{ backgroundImage: `url(${edit2})` }}
+                                            style={{ backgroundImage: `url(https://ik.imagekit.io/nakibKit/tr:q-auto,f-auto/My%20Images/edit2.jpg?updatedAt=1748281091838)` }}
                                             initial={{ clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)", filter: "blur(20px) grayscale(1)" }} // Hidden at the bottom
                                             animate={{
                                                 clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", filter: "blur(0px) grayscale(0)", transition: {

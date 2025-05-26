@@ -4,8 +4,6 @@ import ProjectGallery from "./Project_Gallery/ProjectGallery";
 import ProjectContent from "./Project_Content/ProjectContent";
 import "./section3.css";
 import { ListData } from "./ListData";
-import bg2 from "../../assets/bg2.png"
-import bg3 from "../../assets/bg3.png"
 import useScreenSize from "../../hooks/ScreenSizeHook/useScreenSize";
 import useStateHook from "../../hooks/CustomStateHook/useStateHook";
 
@@ -34,10 +32,10 @@ function Section3() {
       <section ref={secRef} id="image_reveal">
 
         <motion.div style={{ y }} className="imgBgThreeParent">
-          <motion.img style={{ filter }} src={bg2} className="bgImgThree" alt="Background" />
+          <motion.img style={{ filter }} src="https://ik.imagekit.io/nakibKit/tr:q-auto,f-auto/My%20Images/bg2.png?updatedAt=1748281075214" className="bgImgThree" alt="Background" />
         </motion.div>
         <motion.div style={{ y: yReverse }} className="imgBgFourParent">
-          <motion.img style={{ rotate }} src={bg3} className="bgImgFour" alt="Background" />
+          <motion.img style={{ rotate }} src="https://ik.imagekit.io/nakibKit/tr:q-auto,f-auto/My%20Images/bg3.png?updatedAt=1748281075058" className="bgImgFour" alt="Background" />
         </motion.div>
 
         <div ref={hoverEl} className="section3Content">

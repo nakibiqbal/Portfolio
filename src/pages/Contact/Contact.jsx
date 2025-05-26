@@ -2,7 +2,6 @@ import { FaGithub, FaFacebook, FaLinkedin } from 'react-icons/fa';
 import { motion } from "framer-motion"
 import './Contact.css'; // Import the custom CSS file
 import MagnetButton from './MagnetButton';
-import bg5 from "../../assets/bg5.png"
 import { customEase } from '../../Easings/customEase';
 
 function Contact() {
@@ -60,7 +59,7 @@ function Contact() {
             <div
                 className="background"
                 style={{
-                    backgroundImage: `url(${bg5})`, // Import the background image
+                    backgroundImage: `url(https://ik.imagekit.io/nakibKit/tr:q-auto,f-auto/My%20Images/bg5.png?updatedAt=1748281077658)`, // Import the background image
                 }}
             />
 

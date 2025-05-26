@@ -3,14 +3,12 @@ import gsap from "gsap";
 import { motion, useScroll, useTransform } from "framer-motion"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Section6.css";
-import bg6 from "../../assets/bg6.png"
 import useScreenSize from "../../hooks/ScreenSizeHook/useScreenSize";
 import useStateHook from "../../hooks/CustomStateHook/useStateHook";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Section6 = () => {
-
 
   const cardData = [
     {
@@ -59,7 +57,7 @@ const Section6 = () => {
     <section ref={secRef} id="section6">
       <motion.div style={{ y }} className="bgImgParent">
         <img
-          src={bg6} className="bgOne" alt="Background" />
+          src="https://ik.imagekit.io/nakibKit/tr:q-auto,f-auto/My%20Images/bg6.png?updatedAt=1748281075297" className="bgOne" alt="Background" />
       </motion.div>
       <div className="cardContainer">
         {cardData.map((card) => (

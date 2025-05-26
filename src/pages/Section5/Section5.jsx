@@ -3,9 +3,6 @@ import { useState, useEffect, useRef } from "react";
 import { FaReact } from "react-icons/fa";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { SiGreensock } from "react-icons/si";
-import bg1 from "../../assets/bg1.png"
-
-
 import MainVariant1 from "./Main_Variant1/MainVariant1";
 import MainVariant2 from "./Main_Variant2/MainVariant2";
 import MainVariant3 from "./Main_Variant3/MainVariant3";
@@ -56,7 +53,7 @@ const Section5 = () => {
         <section id="section5">
 
             <div className="imgBgTwoParent">
-                <img src={bg1} className="bgImgTwo" alt="Background" />
+                <img src="https://ik.imagekit.io/nakibKit/tr:q-auto,f-auto/My%20Images/bg1.png?updatedAt=1748281300815" className="bgImgTwo" alt="Background" />
             </div>
 
             <div className="sec5Wrapper">

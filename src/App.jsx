@@ -1,12 +1,13 @@
+import { lazy, Suspense } from "react";
 import "./App.css";
-import Navbar from "./Navbar/Navbar";
-import Contact from "./pages/Contact/Contact";
-import PixelSection from "./pages/PixelSection/PixelSection";
-import Section2 from "./pages/Section2/Section2";
-import Section3 from "./pages/Section3/Section3";
-import Section4 from "./pages/Section4/Section4";
-import Section5 from "./pages/Section5/Section5";
-import Section6 from "./pages/Section6/Section6";
+const Navbar = lazy(() => import("./Navbar/Navbar"));
+const Contact = lazy(() => import("./pages/Contact/Contact"));
+const PixelSection = lazy(() => import("./pages/PixelSection/PixelSection"));
+const Section2 = lazy(() => import("./pages/Section2/Section2"));
+const Section3 = lazy(() => import("./pages/Section3/Section3"));
+const Section4 = lazy(() => import("./pages/Section4/Section4"));
+const Section5 = lazy(() => import("./pages/Section5/Section5"));
+const Section6 = lazy(() => import("./pages/Section6/Section6"));
 import useLenis from "./useLenis";
 
 function App() {
@@ -15,14 +16,30 @@ function App() {
   return (
     <>
       <main>
-        <Navbar />
-        <PixelSection />
-        <Section5 />
-        <Section6 />
-        <Section3 />
-        <Section2 />
-        <Section4 />
-        <Contact />
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Navbar />
+        </Suspense>
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <PixelSection />
+        </Suspense>
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Section5 />
+        </Suspense>
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Section6 />
+        </Suspense>
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Section3 />
+        </Suspense>
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Section2 />
+        </Suspense>
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Section4 />
+        </Suspense>
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Contact />
+        </Suspense>
       </main>
     </>
   );
