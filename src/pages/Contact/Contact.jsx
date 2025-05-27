@@ -59,7 +59,7 @@ function Contact() {
             <div
                 className="background"
                 style={{
-                    backgroundImage: `url(https://ik.imagekit.io/nakibKit/tr:q-auto,f-auto/My%20Images/bg5.png?updatedAt=1748281077658)`, // Import the background image
+                    backgroundImage: `url(https://ik.imagekit.io/nakibKit/My%20Images/bg5.png?tr=f-auto,q-auto&updatedAt=1748281077658)`
                 }}
             />
 

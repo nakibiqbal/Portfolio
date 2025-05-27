@@ -53,7 +53,12 @@ const Section5 = () => {
         <section id="section5">
 
             <div className="imgBgTwoParent">
-                <img src="https://ik.imagekit.io/nakibKit/tr:q-auto,f-auto/My%20Images/bg1.png?updatedAt=1748281300815" className="bgImgTwo" alt="Background" />
+                <img
+                    src="https://ik.imagekit.io/nakibKit/My%20Images/bg1.png?tr=f-auto,q-auto&updatedAt=1748281300815"
+                    className="bgImgTwo"
+                    alt="Background"
+                    loading="lazy"
+                />
             </div>
 
             <div className="sec5Wrapper">

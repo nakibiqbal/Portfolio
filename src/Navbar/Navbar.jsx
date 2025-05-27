@@ -72,7 +72,9 @@ const Navbar = () => {
                                         </div>
                                         <motion.div
                                             className="nakibIqbal"
-                                            style={{ backgroundImage: `url(https://ik.imagekit.io/nakibKit/tr:q-auto,f-auto/My%20Images/edit2.jpg?updatedAt=1748281091838)` }}
+                                            style={{
+                                                backgroundImage: 'url("https://ik.imagekit.io/nakibKit/My%20Images/edit2.jpg?tr=f-auto,q-auto&updatedAt=1748281091838")'
+                                            }}
                                             initial={{ clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)", filter: "blur(20px) grayscale(1)" }} // Hidden at the bottom
                                             animate={{
                                                 clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", filter: "blur(0px) grayscale(0)", transition: {

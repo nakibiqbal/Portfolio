@@ -57,7 +57,11 @@ const Section6 = () => {
     <section ref={secRef} id="section6">
       <motion.div style={{ y }} className="bgImgParent">
         <img
-          src="https://ik.imagekit.io/nakibKit/tr:q-auto,f-auto/My%20Images/bg6.png?updatedAt=1748281075297" className="bgOne" alt="Background" />
+          loading="lazy"
+          src="https://ik.imagekit.io/nakibKit/My%20Images/bg6.png?tr=f-auto,q-auto&updatedAt=1748281075297"
+          className="bgOne"
+          alt="Background"
+        />
       </motion.div>
       <div className="cardContainer">
         {cardData.map((card) => (

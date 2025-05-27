@@ -32,10 +32,19 @@ function Section3() {
       <section ref={secRef} id="image_reveal">
 
         <motion.div style={{ y }} className="imgBgThreeParent">
-          <motion.img style={{ filter }} src="https://ik.imagekit.io/nakibKit/tr:q-auto,f-auto/My%20Images/bg2.png?updatedAt=1748281075214" className="bgImgThree" alt="Background" />
-        </motion.div>
+          <motion.img
+            style={{ filter }}
+            src="https://ik.imagekit.io/nakibKit/My%20Images/bg2.png?tr=f-auto,q-auto&updatedAt=1748281075214"
+            className="bgImgThree"
+            alt="Background"
+          />        </motion.div>
         <motion.div style={{ y: yReverse }} className="imgBgFourParent">
-          <motion.img style={{ rotate }} src="https://ik.imagekit.io/nakibKit/tr:q-auto,f-auto/My%20Images/bg3.png?updatedAt=1748281075058" className="bgImgFour" alt="Background" />
+          <motion.img
+            style={{ rotate }}
+            src="https://ik.imagekit.io/nakibKit/My%20Images/bg3.png?tr=f-auto,q-auto&updatedAt=1748281075058"
+            className="bgImgFour"
+            alt="Background"
+          />
         </motion.div>
 
         <div ref={hoverEl} className="section3Content">
