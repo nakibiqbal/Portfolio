@@ -1,7 +1,7 @@
 import { Suspense, lazy } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./Navbar.css";
-const Items = lazy(() => import("./Items"));
+import Items from "./Items";
 import useScreenSize from "../hooks/ScreenSizeHook/useScreenSize";
 import { customEase } from "../Easings/customEase";
 import useStateHook from "../hooks/CustomStateHook/useStateHook";
@@ -65,9 +65,8 @@ const Navbar = () => {
                                     <div className="navItems">
 
                                         <div className="navItemsChild">
-                                            <Suspense fallback={<h1>Loading...</h1>}>
-                                                <Items setIsClick={setIsClick} />
-                                            </Suspense>
+
+                                            <Items setIsClick={setIsClick} />
 
                                         </div>
                                         <motion.div

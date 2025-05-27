@@ -2,31 +2,25 @@ import { useEffect, useRef } from "react";
 import Lenis from "@studio-freight/lenis";
 
 const useLenis = () => {
-  const lenisRef = useRef(null);
-
   useEffect(() => {
-    // Initialize Lenis
-    lenisRef.current = new Lenis({
-      duration: 1.5,
-      // easing: (t) => t * (2 - t),
-      // direction: "vertical",
-      // smoothWheel: true,
-    });
+    const lenis = new Lenis({
+      lerp: 0.08, // lower = smoother
+    })
 
-    const onScroll = (time) => {
-      lenisRef.current.raf(time);
-      requestAnimationFrame(onScroll);
-    };
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
 
-    requestAnimationFrame(onScroll);
+    requestAnimationFrame(raf)
 
-    // Cleanup on component unmount
     return () => {
-      lenisRef.current.destroy();
-    };
-  }, []);
+      lenis.destroy()
+    }
+  }, [])
 
-  return lenisRef;
+
+  return;
 };
 
 export default useLenis;
