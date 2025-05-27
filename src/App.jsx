@@ -2,7 +2,7 @@ import { lazy, Suspense, useEffect } from "react";
 import "./App.css";
 import Lenis from "@studio-freight/lenis";
 import Navbar from "./Navbar/Navbar";
-import PixelSection from "./pages/PixelSection/PixelSection";
+// import PixelSection from "./pages/PixelSection/PixelSection";
 // const Navbar = lazy(() => import("./Navbar/Navbar"));
 const Contact = lazy(() => import("./pages/Contact/Contact"));
 // const PixelSection = lazy(() => import("./pages/PixelSection/PixelSection"));
@@ -37,7 +37,7 @@ function App() {
     <>
       <main>
         <Navbar />
-        <PixelSection />
+        {/* <PixelSection /> */}
         <Suspense fallback={<Loader />}>
           <Section5 />
         </Suspense>

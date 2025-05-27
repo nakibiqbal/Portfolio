@@ -13,12 +13,12 @@
 }
 .texts {
   display: flex;
-  mix-blend-mode: overlay;
+  /* mix-blend-mode: overlay; */
   width: 50vw;
   height: 100%;
   justify-content: center;
   align-items: center;
-  transform: translateY(100%);
+  /* transform: translateY(100%); */
 }
 .texts p {
   font-family: "Quicksand";
