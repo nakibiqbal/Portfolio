@@ -19,7 +19,7 @@ const Section4 = () => {
 
       <div className="imageWrapper">
 
-        <Images parentRef={parentRef} />
+        <Images />
 
         <motion.div style={{ y }} className="texts">
 
