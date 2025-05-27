@@ -1,13 +1,10 @@
-@import url("https://fonts.cdnfonts.com/css/glimp");
-@import url("https://fonts.cdnfonts.com/css/pixel-sans-serif");
-@import url("https://fonts.cdnfonts.com/css/blockstepped");
-
 .pixelDiv {
   width: 5vw;
   height: 5vw;
   mix-blend-mode: lighten;
   background-color: rgb(0, 30, 0);
   z-index: 2;
+  pointer-events: all;
 }
 
 .iframe {

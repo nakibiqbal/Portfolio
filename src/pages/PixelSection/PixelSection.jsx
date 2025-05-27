@@ -17,7 +17,7 @@ const PixelSection = () => {
     <section
       style={{
         height: "100vh",
-        width: "100%,",
+        width: "100%",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -34,6 +34,7 @@ const PixelSection = () => {
           width: "100vw",
           height: "100vh",
           position: "absolute",
+          pointerEvents: "none"
         }}
       >
         {Array.from({ length: boxCount }).map((_, index) => (

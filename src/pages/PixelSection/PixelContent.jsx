@@ -18,12 +18,12 @@ const PixelContent = ({ opacity }) => {
         opacity
       }}
     >
-      <iframe
-        src="https://giphy.com/embed/npY8OaCJcdGvBw2GtM"
+      <img
+        src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGMwMzk0cTNxOWF3Y2hha3h5YzE5OTR2NjdscGljZWZpemtqNWNqbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/npY8OaCJcdGvBw2GtM/giphy.gif"
         style={{ border: "none", zIndex: 1 }}
-        title="animation"
         className="iframe"
-      ></iframe>
+        loading="lazy"
+      />
       <h1 className="name">$ NAKIB IQBAL JOARDER $</h1>
       <h1 className="name">FRONTEND REACT.JS</h1>
       <h1 className="developer">
