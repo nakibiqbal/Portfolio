@@ -10,7 +10,7 @@
   position: relative;
   font-family: "Pixel Sans Serif";
   font-size: 18px;
-  color: green;
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,6 +26,7 @@
 }
 .mainTextVariant p {
   mix-blend-mode: difference;
+  background: green;
 }
 .one {
   top: 0vh;

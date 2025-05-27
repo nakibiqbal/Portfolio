@@ -2,7 +2,7 @@
   position: relative;
 }
 .scrambleVarian {
-  width: 100%;
+  width: auto;
   overflow: hidden;
 }
 .variant7 p {
