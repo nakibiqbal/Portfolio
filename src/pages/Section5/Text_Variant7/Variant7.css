@@ -8,7 +8,9 @@
 .variant7 p {
   margin: 0;
   padding: 0;
-  line-height: 24px;
+  line-height: 18px;
+  background: transparent;
+  color: green;
   white-space: nowrap;
 }
 @media (max-width: 1500px) {
