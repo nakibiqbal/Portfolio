@@ -9,18 +9,18 @@ import useScreenSize from "../../hooks/ScreenSizeHook/useScreenSize";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Images() {
+export default function Images({ parentRef }) {
     const [data] = useState(Data);
     return (
         <div className="parentImgDiv">
             {data.map(({ src, className }, index) => (
-                <ScrollFunction key={index} index={index} src={src} className={className} />
+                <ScrollFunction key={index} index={index} src={src} className={className} parentRef={parentRef} />
             ))}
         </div>
     );
 }
 
-const ScrollFunction = ({ index, src, className }) => {
+const ScrollFunction = ({ index, src, className, parentRef }) => {
     const childRef = useRef(null);
     const isSmallScreen = useScreenSize(500);
 
@@ -44,7 +44,7 @@ const ScrollFunction = ({ index, src, className }) => {
                 }
             );
         },
-        { scope: childRef }
+        { scope: parentRef.current }
     );
 
     return (
