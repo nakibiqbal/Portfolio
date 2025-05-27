@@ -1,5 +1,6 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import "./App.css";
+import Lenis from "@studio-freight/lenis";
 import Navbar from "./Navbar/Navbar";
 import PixelSection from "./pages/PixelSection/PixelSection";
 // const Navbar = lazy(() => import("./Navbar/Navbar"));
@@ -10,11 +11,27 @@ const Section3 = lazy(() => import("./pages/Section3/Section3"));
 const Section4 = lazy(() => import("./pages/Section4/Section4"));
 const Section5 = lazy(() => import("./pages/Section5/Section5"));
 const Section6 = lazy(() => import("./pages/Section6/Section6"));
-import useLenis from "./useLenis";
 import Loader from "./Loader";
 
 function App() {
-  useLenis();
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      lerp: 0.08, // lower = smoother
+    })
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+    return () => {
+      lenis.destroy()
+    }
+  }, [])
+
 
   return (
     <>
