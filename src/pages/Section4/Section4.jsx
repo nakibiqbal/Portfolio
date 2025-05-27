@@ -1,12 +1,10 @@
 import { useRef, Suspense, lazy } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-// import Images from "./Images";
+import Images from "./Images";
 import "./section4.css";
 import "./images.css"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-const Images = lazy(() => import("./Images"));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,9 +19,7 @@ const Section4 = () => {
 
       <div className="imageWrapper">
 
-        <Suspense fallback={<div>Loading images...</div>}>
-          <Images />
-        </Suspense>
+        <Images />
 
         <motion.div style={{ y }} className="texts">
 
