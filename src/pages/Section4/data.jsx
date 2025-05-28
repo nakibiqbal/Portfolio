@@ -1,7 +1,7 @@
 export const Data = [
     { id: 1, src: "https://ik.imagekit.io/nakibKit/My%20Images/ami1.jpg?tr=f-auto,q-5&updatedAt=1748281073506", className: "class1" },
-    { id: 2, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit8.jpg?tr=f-auto,q-5&updatedAt=1748281108479", className: "class2" },
-    { id: 3, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit8.jpg?tr=f-auto,q-5&updatedAt=1748281108479", className: "class3" },
+    { id: 3, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit8.jpg?tr=f-auto,q-5&updatedAt=1748281108479", className: "class2" },
+    { id: 2, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit3.jpg?tr=f-auto,q-5&updatedAt=1748281109191", className: "class3" },
     { id: 4, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit2.jpg?tr=f-auto,q-5&updatedAt=1748281091838", className: "class4" },
     { id: 5, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit16.jpg?tr=f-auto,q-5&updatedAt=1748281098948", className: "class5" },
     { id: 6, src: "https://ik.imagekit.io/nakibKit/My%20Images/n3.jpg?tr=f-auto,q-5&updatedAt=1748281069145", className: "class6" },

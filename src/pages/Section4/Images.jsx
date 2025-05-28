@@ -31,13 +31,11 @@ const ScrollFunction = ({ index, src, className }) => {
                 {
                     z: -1000,
                     opacity: 0,
-                    // visibility: "hidden",
                     display: "none"
                 },
                 {
                     z: 300,
                     opacity: 1,
-                    // visibility: "visible",
                     display: "inline-block",
                     scrollTrigger: {
                         trigger: childRef.current,
@@ -51,11 +49,17 @@ const ScrollFunction = ({ index, src, className }) => {
         { scope: childRef }
     );
 
+
+
     return (
-        <div ref={childRef} className="childImgDiv">
-            <div className={`imagesSize ${className}`}>
-                <img src={src} loading="lazy" />
+
+        <>
+            <div ref={childRef} className="childImgDiv">
+                <div className={`imagesSize ${className}`}>
+                    <img src={src} loading="lazy" />
+                </div>
             </div>
-        </div>
-    );
+        </>
+
+    )
 };
