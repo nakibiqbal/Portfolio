@@ -5,8 +5,8 @@
   will-change: transform;
   top: 0;
   transform-style: preserve-3d;
-  perspective: 200px;
-  perspective-origin: center;
+  perspective: 100px;
+  perspective-origin: left;
 }
 .childImgDiv {
   display: flex;
@@ -20,19 +20,22 @@
   transform-style: preserve-3d;
 }
 .imagesSize {
-  width: 35vw;
+  width: 25vw;
   height: 35vh;
   position: absolute;
-  perspective-origin: center;
+  /* perspective-origin: right; */
   will-change: transform;
   transform-style: preserve-3d;
+  padding: 10px 0px;
+  /* perspective: 1200px; */
 }
 .imageWrapper img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transform-style: preserve-3d;
+  /* transform: rotateY(-40deg); */
 }
-
 .imagesSize.class1 {
   top: 0;
   left: 0;

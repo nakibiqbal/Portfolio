@@ -29,7 +29,7 @@ const ScrollFunction = ({ index, src, className }) => {
             gsap.fromTo(
                 childRef.current,
                 {
-                    z: -1000,
+                    z: -800,
                     opacity: 0,
                     display: "none"
                 },
@@ -39,8 +39,8 @@ const ScrollFunction = ({ index, src, className }) => {
                     display: "inline-block",
                     scrollTrigger: {
                         trigger: childRef.current,
-                        start: `${index * (isSmallScreen ? 80 : 70)}% 50%`,
-                        end: `${index * (isSmallScreen ? 80 : 70)}% -110%`,
+                        start: `${index * (isSmallScreen ? 100 : 60)}% 50%`,
+                        end: `${index * (isSmallScreen ? 100 : 60)}% -110%`,
                         scrub: true,
                     },
                 }
