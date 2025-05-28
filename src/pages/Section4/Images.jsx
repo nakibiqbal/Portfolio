@@ -39,8 +39,8 @@ const ScrollFunction = ({ index, src, className }) => {
                     display: "inline-block",
                     scrollTrigger: {
                         trigger: childRef.current,
-                        start: `${index * (isSmallScreen ? 100 : 60)}% 50%`,
-                        end: `${index * (isSmallScreen ? 100 : 60)}% -110%`,
+                        start: `${index * (isSmallScreen ? 80 : 60)}% 50%`,
+                        end: `${index * (isSmallScreen ? 80 : 60)}% -110%`,
                         scrub: true,
                     },
                 }

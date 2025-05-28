@@ -39,7 +39,6 @@ section#section6 {
   gap: 1rem;
   padding: 2rem;
   transition: all 2s ease-out;
-  /* border: 1px solid rgba(255, 255, 255, 0.072); */
   border: 1px solid green;
 }
 .card-content:hover {
@@ -51,11 +50,11 @@ section#section6 {
   font-weight: lighter;
 }
 .card-content p {
-  font-family: "Quicksand";
+  font-family: sans-serif;
   font-size: 20px;
-  font-weight: 200;
+  font-weight: 100;
   line-height: 22px;
-  color: #cacaca;
+  color: #bbbbbb;
 }
 .shadow {
   width: 9rem;

@@ -1,6 +1,6 @@
 #section4 {
   width: 100%;
-  height: 500vh;
+  height: 350vh;
   position: relative;
 }
 .imageWrapper {
@@ -13,21 +13,18 @@
 }
 .texts {
   display: flex;
-  /* mix-blend-mode: overlay; */
+  mix-blend-mode: difference;
   width: 50vw;
   height: 100%;
   justify-content: center;
   align-items: center;
   margin: auto;
-  padding-bottom: 5rem;
-  margin-top: -20rem;
-  /* transform: translateY(100%); */
 }
 .texts p {
-  font-family: "Quicksand";
-  font-size: 1.8vw;
-  font-weight: bolder;
-  color: #ffffffcc;
+  font-family: sans-serif;
+  font-size: 1.6vw;
+  font-weight: 100;
+  color: white;
 }
 
 @media (max-width: 1300px) {
@@ -49,6 +46,9 @@
 }
 
 @media (max-width: 500px) {
+  #section4 {
+    height: 400vh;
+  }
   .texts {
     width: 90%;
   }
