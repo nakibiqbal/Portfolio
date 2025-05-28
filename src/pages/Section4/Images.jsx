@@ -30,11 +30,15 @@ const ScrollFunction = ({ index, src, className }) => {
                 childRef.current,
                 {
                     z: -1000,
-                    opacity: 0,
+                    // opacity: 0,
+                    // visibility: "hidden",
+                    display: "none"
                 },
                 {
                     z: 300,
-                    opacity: 1,
+                    // opacity: 1,
+                    // visibility: "visible",
+                    display: "inline-block",
                     scrollTrigger: {
                         trigger: childRef.current,
                         start: `${index * (isSmallScreen ? 80 : 70)}% 50%`,
