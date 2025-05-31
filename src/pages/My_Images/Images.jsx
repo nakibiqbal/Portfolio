@@ -5,14 +5,6 @@ import Lenis from "@studio-freight/lenis";
 
 export default function Images() {
 
-    const [isClicked, setIsClicked] = useState(false);
-    const [index, setIndex] = useState(1);
-
-    const handleClick = (id) => {
-        setIsClicked(!isClicked);
-        setIndex(id);
-    };
-
     useEffect(() => {
         const lenis = new Lenis({
             infinite: true,
@@ -35,7 +27,7 @@ export default function Images() {
         offset: ["start start", "end end"],
     });
 
-    const y = useTransform(scrollYProgress, [0, 1], ["-66.67%", "66.67%"]);
+    const y = useTransform(scrollYProgress, [0, 1], ["-72.35%", "72.35%"]);
     const yR = useTransform(scrollYProgress, [0, 1], ["0%", "0%"]);
 
 
@@ -46,7 +38,7 @@ export default function Images() {
         },
         {
             id: 2,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/edit8.jpg?tr=f-auto,q-auto&updatedAt=1748281108479",
+            src: "https://ik.imagekit.io/nakibKit/My%20Images/edit8.jpg?tr=f-auto,q-auto&updatedAt=1748687120430",
         },
         {
             id: 3,
@@ -70,7 +62,7 @@ export default function Images() {
         },
         {
             id: 2,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/edit8.jpg?tr=f-auto,q-auto&updatedAt=1748281108479",
+            src: "https://ik.imagekit.io/nakibKit/My%20Images/edit8.jpg?tr=f-auto,q-auto&updatedAt=1748687120430",
         },
         {
             id: 3,
@@ -121,33 +113,13 @@ export default function Images() {
         <section id="images">
 
 
-            <motion.div
-                style={{ y }}
-                className="imagesWrapp">
+            <motion.div style={{ y }} className="imagesWrapp">
                 <div className="imgNumContainer">
 
                     {
                         dataOne.map(({ id, src }) => {
-                            const active = index === id && isClicked;
-                            return <div
-                                onClick={() => handleClick(id)}
-                                key={id}
-                                className="imgNum"
-                            >
-                                <AnimatePresence>
-                                    <motion.img
-                                        animate={{
-                                            // position: active ? "fixed" : "fixed",
-                                            // left: active ? "50%" : "auto",
-                                            // transform: active ? "translateX(-50%)" : "none",
-                                            zIndex: active ? 1000 : "auto",
-                                            width: active ? "100%" : "13vw",
-                                            // objectFit: active ? "contain" : "cover",
-                                            height: active ? "80vh" : "31vh",
-                                        }}
-                                        src={src} alt="PICTURE OF NAKIB IQBAL JOARDER" />
-
-                                </AnimatePresence>
+                            return <div key={id} className="imgNum">
+                                <img src={src} alt="PICTURE OF NAKIB IQBAL JOARDER" />
                             </div>
                         })
                     }
@@ -156,24 +128,19 @@ export default function Images() {
             </motion.div>
 
 
-            <motion.div
-                style={{ y: yR }}
-                className="imagesWrapp">
+            <motion.div style={{ y: yR }} className="imagesWrapp">
                 <div className="imgNumContainer">
 
                     {
                         dataTwo.map(({ id, src }) => {
-                            return <div
-                                key={id} className="imgNum">
-                                <img
-                                    src={src} alt="PICTURE OF NAKIB IQBAL JOARDER" />
+                            return <div key={id} className="imgNum">
+                                <img src={src} alt="PICTURE OF NAKIB IQBAL JOARDER" />
                             </div>
                         })
                     }
 
                 </div>
             </motion.div>
-
 
 
         </section>
