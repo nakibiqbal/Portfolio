@@ -19,10 +19,7 @@ import Loader from "./Loader";
 function App() {
 
   useEffect(() => {
-    const lenis = new Lenis({
-      lerp: 0.08, // lower = smoother
-    })
-
+    const lenis = new Lenis();
     function raf(time) {
       lenis.raf(time)
       requestAnimationFrame(raf)

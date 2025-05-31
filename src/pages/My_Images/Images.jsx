@@ -1,11 +1,17 @@
-import { useEffect, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { act, useEffect, useState } from 'react';
+import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import './Images.css';
 import Lenis from "@studio-freight/lenis";
 
 export default function Images() {
 
-    const [modal, setModal] = useState({ active: false, index: 0 })
+    const [isClicked, setIsClicked] = useState(false);
+    const [index, setIndex] = useState(1);
+
+    const handleClick = (id) => {
+        setIsClicked(!isClicked);
+        setIndex(id);
+    };
 
     useEffect(() => {
         const lenis = new Lenis({
@@ -59,15 +65,15 @@ export default function Images() {
             src: "https://ik.imagekit.io/nakibKit/My%20Images/n3.jpg?tr=f-auto,q-auto&updatedAt=1748281069145",
         },
         {
-            id: 7,
+            id: 1,
             src: "https://ik.imagekit.io/nakibKit/My%20Images/wall.jpg?tr=f-auto,q-auto&updatedAt=1748281075004",
         },
         {
-            id: 8,
+            id: 2,
             src: "https://ik.imagekit.io/nakibKit/My%20Images/edit8.jpg?tr=f-auto,q-auto&updatedAt=1748281108479",
         },
         {
-            id: 9,
+            id: 3,
             src: "https://ik.imagekit.io/nakibKit/My%20Images/edit3.jpg?tr=f-auto,q-auto&updatedAt=1748281109191",
         },
 
@@ -121,13 +127,27 @@ export default function Images() {
                 <div className="imgNumContainer">
 
                     {
-                        dataOne.map(({ id, src }, index) => {
+                        dataOne.map(({ id, src }) => {
+                            const active = index === id && isClicked;
                             return <div
-                                onMouseEnter={() => setModal({ active: true, index: index })}
-                                onMouseLeave={() => setModal({ active: false, index: index })}
-                                key={index} className="imgNum">
-                                <img src={src} style={{ transform: `scale(${modal.active ? 5 : 1})` }} alt="PICTURE OF NAKIB IQBAL JOARDER" />
-                                <span>{id}</span>
+                                onClick={() => handleClick(id)}
+                                key={id}
+                                className="imgNum"
+                            >
+                                <AnimatePresence>
+                                    <motion.img
+                                        animate={{
+                                            // position: active ? "fixed" : "fixed",
+                                            // left: active ? "50%" : "auto",
+                                            // transform: active ? "translateX(-50%)" : "none",
+                                            zIndex: active ? 1000 : "auto",
+                                            width: active ? "100%" : "13vw",
+                                            // objectFit: active ? "contain" : "cover",
+                                            height: active ? "80vh" : "31vh",
+                                        }}
+                                        src={src} alt="PICTURE OF NAKIB IQBAL JOARDER" />
+
+                                </AnimatePresence>
                             </div>
                         })
                     }
@@ -145,8 +165,8 @@ export default function Images() {
                         dataTwo.map(({ id, src }) => {
                             return <div
                                 key={id} className="imgNum">
-                                <img src={src} alt="PICTURE OF NAKIB IQBAL JOARDER" />
-                                <span>{id}</span>
+                                <img
+                                    src={src} alt="PICTURE OF NAKIB IQBAL JOARDER" />
                             </div>
                         })
                     }
