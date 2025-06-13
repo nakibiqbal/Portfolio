@@ -1,66 +1,227 @@
-::-webkit-scrollbar {
-  display: none;
-}
-.navbar {
-  display: none;
-}
-#images {
-  background-color: #000;
+#myImages {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: relative;
-  color: whitesmoke;
   overflow: hidden;
   display: flex;
   justify-content: center;
-  gap: 1rem;
-}
-
-.imagesWrapp {
-  display: flex;
   align-items: center;
-  width: fit-content;
-  height: 100%;
   flex-direction: column;
+  gap: 0.6rem;
+  background: #d3d3d3;
+  z-index: 99999999;
 }
-.imgNumContainer {
-  width: fit-content;
-  height: 400vh;
+.imagesWrapper {
+  width: 100%;
+  height: auto;
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.imgNum {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.images {
+  width: fit-content;
+  height: 12vw;
+  object-fit: contain;
+  position: fixed;
+}
+
+/* images start */
+img.images:first-child {
+  top: 37vh;
+  right: 30.5vw;
+  height: 8vw;
+}
+
+img.images:nth-child(2) {
+  left: 0vw;
+  bottom: 23vh;
+  height: 8vw;
+}
+
+img.images:nth-child(3) {
+  left: 7vw;
+  top: 20vh;
+}
+
+img.images:nth-child(4) {
+  right: 1vw;
+  top: 2vh;
+  height: 17vw;
+}
+
+img.images:nth-child(5) {
+  right: 2vw;
+  bottom: 28vh;
+  height: 7vw;
+}
+
+img.images:nth-child(6) {
+  right: 23vw;
+  bottom: 0vh;
+  height: 10vw;
+}
+
+img.images:nth-child(7) {
+  top: 0vh;
+  left: 20vw;
+}
+
+img.images:nth-child(8) {
+  left: 35vw;
+  top: 12vh;
+}
+
+img.images:nth-child(9) {
+  right: 17.4vw;
+  top: 20vh;
+}
+
+img.images:nth-child(10) {
+  bottom: 12vh;
+  right: 36vw;
+  height: 9vw;
+}
+
+img.images:nth-child(11) {
+  right: 50vw;
+  bottom: 25vh;
+}
+
+img.images:nth-child(12) {
+  left: 18vw;
+  bottom: 7vh;
+  height: 10vw;
+}
+/* images end */
+
+a.back {
+  background: white;
+  color: black;
+  font-family: "Pixel Sans Serif";
+  text-decoration: none;
+  font-size: 18px;
+  padding: 1rem 12.5rem;
+  position: fixed;
+  bottom: 1rem;
+  z-index: 99;
+  mix-blend-mode: difference;
+  display: none;
+}
+@media (min-width: 1920px) {
+  a.back {
+    font-size: 1vw;
+    padding: 1vw 10.3vw;
+    bottom: 2vh;
+  }
+}
+
+.currentImg {
+  width: fit-content;
+  position: fixed;
+  height: 40vw;
+  z-index: 9999;
+  object-fit: contain;
+}
+.notCurrentDiv {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  position: fixed;
+  gap: 5px;
 }
-.imgNum:hover img {
-  filter: grayscale(0) contrast(1);
+.notCurrentimages {
+  width: fit-content;
+  height: 4rem;
+  object-fit: contain;
+  filter: contrast(0.5);
 }
-.imgNum img {
-  width: 24rem;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(1) contrast(100);
-  transition: filter 1s cubic-bezier(0.16, 1, 0.3, 1);
+button.backButton {
+  position: fixed;
+  bottom: 1vh;
+  background: black;
+  color: white;
+  border: 1px solid white;
+  padding: 1rem 2rem;
+  font-size: 16px;
+  font-family: "Pixel Sans Serif";
+  mix-blend-mode: difference;
+  z-index: 9999999;
+  cursor: pointer;
 }
 
-@media (min-width: 1919px) {
-  .imgNum img {
-    width: 20vw;
+@media (max-width: 700px) {
+  .images {
+    height: 12vh;
   }
-  #images,
-  .imgNumContainer {
-    gap: 1vw;
+  img.images:first-child {
+    top: 37vh;
+    right: 30.5vw;
+    height: 10vh;
   }
-}
-@media (max-width: 815px) {
-  .imgNum img {
-    width: 100%;
+  img.images:nth-child(2) {
+    left: 0vw;
+    bottom: 23vh;
+    height: 8vh;
+  }
+  img.images:nth-child(3) {
+    left: 7vw;
+    top: 21vh;
+  }
+  img.images:nth-child(4) {
+    right: 1vw;
+    top: 2vh;
+    height: 14vh;
+  }
+  img.images:nth-child(5) {
+    right: 2vw;
+    bottom: 28vh;
+    height: 9vh;
+  }
+  img.images:nth-child(6) {
+    right: 13vw;
+    bottom: 3vh;
+    height: 9vh;
+  }
+  img.images:nth-child(7) {
+    top: 0vh;
+    left: 12vw;
+  }
+  img.images:nth-child(7) {
+    top: 0vh;
+    left: 12vw;
+  }
+  img.images:nth-child(9) {
+    right: 11.4vw;
+    top: 17vh;
+  }
+  img.images:nth-child(10) {
+    bottom: 12vh;
+    right: 36vw;
+    height: 12vh;
+  }
+
+  img.images:nth-child(11) {
+    right: 53vw;
+    bottom: 37vh;
+  }
+  img.images:nth-child(12) {
+    left: 7vw;
+    bottom: 8vh;
+    height: 6vh;
+  }
+  .notCurrentDiv {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .currentImg {
+    height: 90vw;
+  }
+  .notCurrentimages {
+    height: 15vw;
   }
 }

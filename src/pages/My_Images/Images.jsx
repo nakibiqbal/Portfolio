@@ -1,148 +1,101 @@
-import { act, useEffect, useState } from 'react';
-import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import './Images.css';
-import Lenis from "@studio-freight/lenis";
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { customEase } from '../../Easings/customEase';
+
 
 export default function Images() {
-
-    useEffect(() => {
-        const lenis = new Lenis({
-            infinite: true,
-            duration: 2,
-        })
-
-        function raf(time) {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
-        }
-
-        requestAnimationFrame(raf)
-
-        return () => {
-            lenis.destroy()
-        }
-    }, [])
-
-    const { scrollYProgress } = useScroll({
-        offset: ["start start", "end end"],
-    });
-
-    const y = useTransform(scrollYProgress, [0, 1], ["-72.35%", "72.35%"]);
-    const yR = useTransform(scrollYProgress, [0, 1], ["0%", "0%"]);
-
+    const [current, setCurrent] = useState(null);
+    const [notCurrent, setNotCurrent] = useState(false);
+    const [btnActive, setBtnActive] = useState(false);
 
     const dataOne = [
-        {
-            id: 1,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/wall.jpg?tr=f-auto,q-auto&updatedAt=1748281075004",
-        },
-        {
-            id: 2,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/edit8.jpg?tr=f-auto,q-auto&updatedAt=1748687120430",
-        },
-        {
-            id: 3,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/edit3.jpg?tr=f-auto,q-auto&updatedAt=1748281109191",
-        },
-        {
-            id: 4,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/edit2.jpg?tr=f-auto,q-auto&updatedAt=1748281091838",
-        },
-        {
-            id: 5,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/edit16.jpg?tr=f-auto,q-auto&updatedAt=1748281098948",
-        },
-        {
-            id: 6,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/n3.jpg?tr=f-auto,q-auto&updatedAt=1748281069145",
-        },
-        {
-            id: 1,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/wall.jpg?tr=f-auto,q-auto&updatedAt=1748281075004",
-        },
-        {
-            id: 2,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/edit8.jpg?tr=f-auto,q-auto&updatedAt=1748687120430",
-        },
-        {
-            id: 3,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/edit3.jpg?tr=f-auto,q-auto&updatedAt=1748281109191",
-        },
-
-    ]
-    const dataTwo = [
-        {
-            id: 10,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/n4.jpg?tr=f-auto,q-auto&updatedAt=1748281069197",
-        },
-        {
-            id: 11,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/NAKIB5.jpg?tr=f-auto,q-auto&updatedAt=1748281068345",
-        },
-        {
-            id: 12,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/edit6.jpg?tr=f-auto,q-auto&updatedAt=1748281110269",
-        },
-        {
-            id: 13,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/NAKIB8.jpg?tr=f-auto,q-auto&updatedAt=1748281071415",
-        },
-        {
-            id: 14,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/n2.jpg?tr=f-auto,q-auto&updatedAt=1748281069511",
-        },
-        {
-            id: 15,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/edit12.jpg?tr=f-auto,q-auto&updatedAt=1748281101344",
-        },
-        {
-            id: 16,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/n4.jpg?tr=f-auto,q-auto&updatedAt=1748281069197",
-        },
-        {
-            id: 17,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/NAKIB5.jpg?tr=f-auto,q-auto&updatedAt=1748281068345",
-        },
-        {
-            id: 18,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/edit6.jpg?tr=f-auto,q-auto&updatedAt=1748281110269",
-        },
-    ]
+        { id: 1, src: "https://ik.imagekit.io/nakibKit/My%20Images/wall.jpg?tr=f-auto,q-auto&updatedAt=1748281075004" },
+        { id: 2, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit8.jpg?tr=f-auto,q-auto&updatedAt=1748687120430" },
+        { id: 3, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit3.jpg?tr=f-auto,q-auto&updatedAt=1748281109191" },
+        { id: 4, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit2.jpg?tr=f-auto,q-auto&updatedAt=1748281091838" },
+        { id: 5, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit16.jpg?tr=f-auto,q-auto&updatedAt=1748281098948" },
+        { id: 6, src: "https://ik.imagekit.io/nakibKit/My%20Images/n3.jpg?tr=f-auto,q-auto&updatedAt=1748281069145" },
+        { id: 7, src: "https://ik.imagekit.io/nakibKit/My%20Images/n4.jpg?tr=f-auto,q-auto&updatedAt=1748281069197" },
+        { id: 8, src: "https://ik.imagekit.io/nakibKit/My%20Images/NAKIB5.jpg?tr=f-auto,q-auto&updatedAt=1748281068345" },
+        { id: 9, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit6.jpg?tr=f-auto,q-auto&updatedAt=1748281110269" },
+        { id: 10, src: "https://ik.imagekit.io/nakibKit/My%20Images/NAKIB8.jpg?tr=f-auto,q-auto&updatedAt=1748281071415" },
+        { id: 11, src: "https://ik.imagekit.io/nakibKit/My%20Images/n2.jpg?tr=f-auto,q-auto&updatedAt=1748281069511" },
+        { id: 12, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit12.jpg?tr=f-auto,q-auto&updatedAt=1748281101344" },
+    ];
 
     return (
-        <section id="images">
+        <section id="myImages"       >
+            <Link to="/" className="back">BACK</Link>
 
+            <AnimatePresence>
+                {notCurrent && (
+                    <motion.div
+                        transition={{ duration: 1, ease: customEase }}
+                        className='notCurrentDiv'
+                        layout
+                    >
+                        {dataOne.map((image) => (
+                            <motion.img
+                                layoutId={image.id}
+                                src={image.src}
+                                transition={{ duration: 1, ease: customEase }}
+                                key={image.id}
+                                className="notCurrentimages"
+                            />
+                        ))}
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
-            <motion.div style={{ y }} className="imagesWrapp">
-                <div className="imgNumContainer">
+            <AnimatePresence>
+                {current && (
+                    <motion.img
+                        className='currentImg'
+                        layoutId={current.id}
+                        transition={{ duration: 1, ease: customEase }}
+                        src={current.src}
+                    />
+                )}
 
-                    {
-                        dataOne.map(({ id, src }) => {
-                            return <div key={id} className="imgNum">
-                                <img src={src} alt="PICTURE OF NAKIB IQBAL JOARDER" />
-                            </div>
-                        })
-                    }
+            </AnimatePresence>
 
-                </div>
-            </motion.div>
+            <AnimatePresence>
+                <motion.div
+                    layout
+                    transition={{ duration: 1, ease: customEase }}
+                    className="imagesWrapper"
+                >
+                    {dataOne.map((image) => (
+                        <motion.img
+                            layoutId={image.id}
+                            onClick={() => {
+                                setCurrent(image);
+                                setNotCurrent(true);
+                                setBtnActive(true);
+                            }}
+                            src={image.src}
+                            transition={{ duration: 1, ease: customEase }}
+                            key={image.id}
+                            className="images"
+                        />
+                    ))}
+                </motion.div>
+            </AnimatePresence>
 
-
-            <motion.div style={{ y: yR }} className="imagesWrapp">
-                <div className="imgNumContainer">
-
-                    {
-                        dataTwo.map(({ id, src }) => {
-                            return <div key={id} className="imgNum">
-                                <img src={src} alt="PICTURE OF NAKIB IQBAL JOARDER" />
-                            </div>
-                        })
-                    }
-
-                </div>
-            </motion.div>
-
-
+            {btnActive && (
+                <button
+                    className='backButton'
+                    onClick={() => {
+                        setCurrent(null);
+                        setNotCurrent(false);
+                        setBtnActive(false);
+                    }}
+                >
+                    back
+                </button>
+            )}
         </section>
-    )
+    );
 }
