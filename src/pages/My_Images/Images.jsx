@@ -74,6 +74,8 @@ export default function Images() {
                                 setNotCurrent(true);
                                 setBtnActive(true);
                             }}
+                            initial={{ filter: "blur(10px)" }}
+                            animate={{ filter: "blur(0px)" }}
                             src={image.src}
                             transition={{ duration: 1, ease: customEase }}
                             key={image.id}
