@@ -11,6 +11,12 @@
   background: #d3d3d3;
   z-index: 99999999;
 }
+.backPageBtn {
+  position: absolute;
+  top: 1.5vh;
+  mix-blend-mode: darken;
+  background: black;
+}
 .imagesWrapper {
   width: 100%;
   height: auto;
@@ -25,6 +31,7 @@
   height: 12vw;
   object-fit: contain;
   position: fixed;
+  cursor: pointer;
 }
 
 /* images start */
@@ -96,27 +103,6 @@ img.images:nth-child(12) {
 }
 /* images end */
 
-a.back {
-  background: white;
-  color: black;
-  font-family: "Pixel Sans Serif";
-  text-decoration: none;
-  font-size: 18px;
-  padding: 1rem 12.5rem;
-  position: fixed;
-  bottom: 1rem;
-  z-index: 99;
-  mix-blend-mode: difference;
-  display: none;
-}
-@media (min-width: 1920px) {
-  a.back {
-    font-size: 1vw;
-    padding: 1vw 10.3vw;
-    bottom: 2vh;
-  }
-}
-
 .currentImg {
   width: fit-content;
   position: fixed;
@@ -142,19 +128,28 @@ a.back {
 }
 button.backButton {
   position: fixed;
-  bottom: 1vh;
-  background: black;
+  left: 50%;
+  bottom: 5vh;
   color: white;
-  border: 1px solid white;
-  padding: 1rem 2rem;
-  font-size: 16px;
-  font-family: "Pixel Sans Serif";
+  background: black;
+  font-size: 40px;
   mix-blend-mode: difference;
-  z-index: 9999999;
+  transform: rotate(-45deg) translateX(-50%);
+  border: none;
+  z-index: 99999;
   cursor: pointer;
 }
 
 @media (max-width: 700px) {
+  button.backButton {
+    left: 50%;
+    bottom: 18vw;
+    transform: rotate(-45deg) translateX(-50%);
+  }
+  .backPageBtn {
+    mix-blend-mode: difference;
+    background: gainsboro;
+  }
   .images {
     height: 12vh;
   }
@@ -216,7 +211,7 @@ button.backButton {
   }
   .notCurrentDiv {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: flex-end;
   }
   .currentImg {
     height: 90vw;

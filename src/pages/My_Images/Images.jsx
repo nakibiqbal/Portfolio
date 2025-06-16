@@ -1,9 +1,9 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import './Images.css';
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { customEase } from '../../Easings/customEase';
-
+import Button from "../../Button/Button"
+import { BsArrowUpLeft } from "react-icons/bs";
 
 export default function Images() {
     const [current, setCurrent] = useState(null);
@@ -26,8 +26,7 @@ export default function Images() {
     ];
 
     return (
-        <section id="myImages"       >
-            <Link to="/" className="back">BACK</Link>
+        <section id="myImages">
 
             <AnimatePresence>
                 {notCurrent && (
@@ -93,9 +92,15 @@ export default function Images() {
                         setBtnActive(false);
                     }}
                 >
-                    back
+                    <BsArrowUpLeft />
                 </button>
             )}
+
+
+            <div className="backPageBtn">
+                <Button page="/" text="back to home" />
+            </div>
+
         </section>
     );
 }

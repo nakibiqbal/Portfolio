@@ -1,21 +1,12 @@
-import { FaGithub, FaFacebook, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaLinkedin } from 'react-icons/fa';
 import { motion } from "framer-motion"
 import './Contact.css'; // Import the custom CSS file
 import MagnetButton from './MagnetButton';
-import { customEase } from '../../Easings/customEase';
 
 function Contact() {
 
     return (
-        <motion.section
-            initial={{ filter: "blur(20px)" }}
-            whileInView={{ filter: "blur(0px)" }}
-            viewport={{ once: true }}
-            transition={{
-                duration: 1.5,
-                ease: customEase,
-            }}
-            id="ContactSection">
+        <section id="ContactSection">
 
             <div className="contactMe">
                 <h1>Let&apos;s connect.</h1>
@@ -43,9 +34,6 @@ function Contact() {
                         <MagnetButton>
                             <a href="https://www.linkedin.com/in/nakib-iqbal/" target='_blink'><FaLinkedin /></a>
                         </MagnetButton>
-                        <MagnetButton>
-                            <a href="https://github.com/nakibiqbal" target='_blink'><FaGithub /></a>
-                        </MagnetButton>
                     </div>
 
                 </div>
@@ -63,7 +51,7 @@ function Contact() {
                 }}
             />
 
-        </motion.section>
+        </section>
     );
 }
 

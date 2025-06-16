@@ -61,12 +61,10 @@
   transform-origin: center;
   transition: all 0.6s cubic-bezier(0.87, 0, 0.13, 1);
   mix-blend-mode: difference;
+  border-radius: 2rem;
 }
 .mail a:hover::before {
   transform: scaleX(1);
-}
-.mail a:hover {
-  font-weight: bold;
 }
 .contactIcons {
   display: flex;
