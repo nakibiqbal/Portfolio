@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import "./App.css";
 import Lenis from "@studio-freight/lenis";
 import Navbar from "./Navbar/Navbar";
@@ -13,8 +13,11 @@ const Section6 = lazy(() => import("./pages/Section6/Section6"));
 const Section7 = lazy(() => import("./pages/Section7/Section7"));
 const Images = lazy(() => import("./pages/My_Images/Images"));
 import Loader from "./Loader";
+import PreLoader from "./PreLoader";
 
 function App() {
+
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -32,54 +35,62 @@ function App() {
 
   return (
     <>
-      <Router>
-        <main>
-          <Navbar />
+      {/* <PreLoader /> */}
+      {
+        loading && <PreLoader setLoading={setLoading} />
+      }
+      <>
+        <Router>
+          <main>
+            <Navbar />
 
-          <Routes>
+            <Routes>
 
-            <Route
-              path="/"
-              element={
-                <>
-                  <PixelSection />
+              <Route
+                path="/"
+                element={
+                  <>
+                    <PixelSection />
+                    <Suspense fallback={<Loader />}>
+                      <Section5 />
+                    </Suspense>
+                    <Suspense fallback={<Loader />}>
+                      <Section6 />
+                    </Suspense>
+                    <Suspense fallback={<Loader />}>
+                      <Section3 />
+                    </Suspense>
+                    <Suspense fallback={<Loader />}>
+                      <Section2 />
+                    </Suspense>
+                    <Suspense fallback={<Loader />}>
+                      <Section4 />
+                    </Suspense>
+                    <Suspense fallback={<Loader />}>
+                      <Section7 />
+                    </Suspense>
+                    <Suspense fallback={<Loader />}>
+                      <Contact />
+                    </Suspense>
+                  </>
+                }
+              />
+              <Route
+                path="/images"
+                element={
                   <Suspense fallback={<Loader />}>
-                    <Section5 />
+                    <Images />
                   </Suspense>
-                  <Suspense fallback={<Loader />}>
-                    <Section6 />
-                  </Suspense>
-                  <Suspense fallback={<Loader />}>
-                    <Section3 />
-                  </Suspense>
-                  <Suspense fallback={<Loader />}>
-                    <Section2 />
-                  </Suspense>
-                  <Suspense fallback={<Loader />}>
-                    <Section4 />
-                  </Suspense>
-                  <Suspense fallback={<Loader />}>
-                    <Section7 />
-                  </Suspense>
-                  <Suspense fallback={<Loader />}>
-                    <Contact />
-                  </Suspense>
-                </>
-              }
-            />
-            <Route
-              path="/images"
-              element={
-                <Suspense fallback={<Loader />}>
-                  <Images />
-                </Suspense>
-              }
-            />
+                }
+              />
 
-          </Routes>
+            </Routes>
 
-        </main>
-      </Router>
+          </main>
+        </Router>
+
+      </>
+
     </>
   );
 }
