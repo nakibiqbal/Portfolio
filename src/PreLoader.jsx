@@ -7,7 +7,7 @@ const PreLoader = ({ setLoading }) => {
     const imageOne = [
         {
             id: 1,
-            src: "https://ik.imagekit.io/nakibKit/My%20Images/edit2.jpg?tr=f-auto,q-auto&updatedAt=1748281091838",
+            src: "https://ik.imagekit.io/nakibKit/My%20Images/edit8.jpg?tr=f-auto,q-auto&updatedAt=1748687120430",
         },
         {
             id: 2,
@@ -21,73 +21,109 @@ const PreLoader = ({ setLoading }) => {
             id: 4,
             src: "https://ik.imagekit.io/nakibKit/My%20Images/edit3.jpg?tr=f-auto,q-auto&updatedAt=1748281109191",
         },
+        {
+            id: 5,
+            src: "https://ik.imagekit.io/nakibKit/My%20Images/NAKIB8.jpg?tr=f-auto,q-auto&updatedAt=1748281108479",
+        },
+        {
+            id: 6,
+            src: "https://ik.imagekit.io/nakibKit/My%20Images/NAKIB5.jpg?tr=f-auto,q-auto&updatedAt=1748281068345",
+        },
+        {
+            id: 7,
+            src: "https://ik.imagekit.io/nakibKit/My%20Images/n3.jpg?tr=f-auto,q-auto&updatedAt=1748281069145",
+        },
+        {
+            id: 8,
+            src: "https://ik.imagekit.io/nakibKit/My%20Images/edit2.jpg?tr=f-auto,q-auto&updatedAt=1748281091838",
+        },
     ];
 
     const preloader = useRef(null);
     const images = useRef([]);
-    const loadingText = useRef(null);
+    const countingTxt = useRef(null);
+    const maskDiv = useRef(null);
 
     useGSAP(() => {
         const tl = gsap.timeline({
-            onComplete: () => { setLoading(false); document.body.style.overflow = "auto" },
-            onStart: () => document.body.style.overflow = "hidden",
+            onComplete: () => {
+                document.querySelector(".appWrapper")?.classList.add("loaded");
+                setLoading(false);
+            },
         });
-        // tl.repeat(-1);
 
         const counter = { value: 0 };
-        // Animate loading text
+        // First fast count: 0% → 90%
+        tl.to(counter, {
+            value: 95,
+            duration: 3,
+            ease: "power1.out",
+            onUpdate: () => {
+                if (countingTxt.current)
+                    countingTxt.current.textContent = `${Math.round(counter.value)}%`;
+            }
+        }, 0.5);
+
+        // Then slower count: 95% → 100%
         tl.to(counter, {
             value: 100,
-            duration: 4,
-            ease: "none",
+            duration: 3,
+            ease: "power3.inOut",
             onUpdate: () => {
-                if (loadingText.current)
-                    loadingText.current.textContent = `${Math.round(counter.value)}%`;
+                if (countingTxt.current)
+                    countingTxt.current.textContent = `${Math.round(counter.value)}%`;
             }
-        }, 0); // starts at t=0
+        }, 2);
 
-        // Animate images from center
+        tl.fromTo(maskDiv.current, { width: 0 }, { width: "25vw", duration: 1, ease: "power4.out", }, 0.5)
+
+        // Animate images 
         tl.fromTo(images.current,
             {
-                clipPath: "polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%)",
+                clipPath: "polygon(50% 41%, 50% 41%, 50% 60%, 50% 60%)",
             },
             {
-                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+                clipPath: "polygon(100% 41%, 0% 41%, 0% 60%, 100% 60%)",
+                duration: 1,
+                ease: "power4.out",
+            }, 1.3);
+        tl.to(images.current,
+            {
+                clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)",
                 duration: 1.5,
                 ease: "power4.out",
-            }, 0.5);
+            }, 2.3);
 
-        // Z-index changes staggered inside loading duration
-        tl.to(images.current[3], { zIndex: 1, duration: 0.1 }, 1);
-        tl.to(images.current[2], { zIndex: 2, duration: 0.1 }, 1.5);
-        tl.to(images.current[1], { zIndex: 3, duration: 0.1 }, 2);
-        tl.to(images.current[0], { zIndex: 4, duration: 0.1 }, 2.5);
+        // Z-index changes
+        tl.to(images.current[7], { zIndex: 1, duration: 0.1 }, 3);
+        tl.to(images.current[6], { zIndex: 2, duration: 0.1 }, 3.2);
+        tl.to(images.current[5], { zIndex: 3, duration: 0.1 }, 3.4);
+        tl.to(images.current[4], { zIndex: 4, duration: 0.1 }, 3.6);
+        tl.to(images.current[3], { zIndex: 5, duration: 0.1 }, 3.8);
+        tl.to(images.current[2], { zIndex: 6, duration: 0.1 }, 4);
+        tl.to(images.current[1], { zIndex: 7, duration: 0.1 }, 4.2);
+        tl.to(images.current[0], { zIndex: 8, duration: 0.1 }, 4.4);
 
-        // Collapse back to center at the end
-        tl.to(images.current, {
-            clipPath: "polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%)",
-            duration: 1,
-            ease: "power4.out",
-        }, 3); // starts when loading text ends (t = 3)
-
+        tl.to(preloader.current, { opacity: 0, filter: "blur(20px)", duration: 2, ease: "power4.out" }, 4.8);
     }, { scope: preloader });
 
     return (
         <div ref={preloader} className="preloader">
             <div className="preLoaderTxt">
-                <p>Loading</p>
-                <p ref={loadingText}>0%</p>
-            </div>
+                <p>Synchronizing</p>
 
-            {imageOne.map(({ id, src }, index) => (
-                <img
-                    key={id}
-                    ref={(el) => (images.current[index] = el)}
-                    className={`preloadImage${id}`}
-                    src={src}
-                    alt={`PICTURE ${id}`}
-                />
-            ))}
+                <div ref={maskDiv} className="maskDiv" />
+                {imageOne.map(({ id, src }, index) => (
+                    <img
+                        key={id}
+                        ref={(el) => (images.current[index] = el)}
+                        className={`preloadImage${id}`}
+                        src={src}
+                        alt={`PICTURE ${id}`}
+                    />
+                ))}
+                <p ref={countingTxt}>0%</p>
+            </div>
         </div>
     );
 };

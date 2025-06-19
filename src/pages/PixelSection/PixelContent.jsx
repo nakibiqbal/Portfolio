@@ -2,7 +2,7 @@
 import { AiFillOpenAI } from "react-icons/ai";
 import { motion } from "framer-motion";
 
-const PixelContent = ({ opacity }) => {
+const PixelContent = () => {
   return (
     <motion.div
       style={{
@@ -15,7 +15,6 @@ const PixelContent = ({ opacity }) => {
         textAlign: "center",
         pointerEvents: "none",
         overflow: "hidden",
-        opacity
       }}
     >
       <img
