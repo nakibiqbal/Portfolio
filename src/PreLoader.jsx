@@ -46,10 +46,7 @@ const PreLoader = ({ setLoading }) => {
 
     useGSAP(() => {
         const tl = gsap.timeline({
-            onComplete: () => {
-                document.querySelector(".appWrapper")?.classList.add("loaded");
-                setLoading(false);
-            },
+            onComplete: () => setLoading(false)
         });
 
         const counter = { value: 0 };

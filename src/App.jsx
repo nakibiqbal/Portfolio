@@ -24,11 +24,7 @@ function App() {
   return (
     <>
 
-      <div className="appWrapper">
-
-        {loading && <PreLoader setLoading={setLoading} />} <MainApp />
-
-      </div>
+      {loading ? <PreLoader setLoading={setLoading} /> : <MainApp />}
 
     </>
   );

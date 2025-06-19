@@ -6,9 +6,18 @@ import useStateHook from "../../hooks/CustomStateHook/useStateHook";
 
 const PixelSection = () => {
   const { boxCount } = useStateHook();
+  const mainRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: mainRef,
+    offset: ["end end", "end center"],
+  })
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0])
 
   return (
-    <section
+    <motion.section
+      initial={{ filter: "blur(10px)", opacity: 0 }}
+      animate={{ filter: "blur(0px)", opacity: 1 }}
+      transition={{ duration: 1, ease: "easeInOut" }}
       style={{
         height: "100vh",
         width: "100%",
@@ -18,6 +27,7 @@ const PixelSection = () => {
         position: "relative",
         overflow: "hidden",
       }}
+      ref={mainRef}
     >
       {/* Hover grid */}
       <div
@@ -45,8 +55,8 @@ const PixelSection = () => {
       </div>
 
       {/* Content overlay */}
-      <PixelContent />
-    </section>
+      <PixelContent opacity={opacity} />
+    </motion.section>
   );
 };
 
