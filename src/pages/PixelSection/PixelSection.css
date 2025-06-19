@@ -21,10 +21,12 @@
   color: white;
   font-size: 2.5vw;
   font-weight: lighter;
-  font-family: "Pixel Sans Serif", sans-serif;
+  /* font-family: "Pixel Sans Serif", sans-serif; */
+  font-family: sans-serif;
 }
 .developer {
-  font-family: "Blockstepped", sans-serif;
+  /* font-family: "Blockstepped", sans-serif; */
+  font-family: sans-serif;
   color: black;
   background-color: white;
   font-size: 4vw;
