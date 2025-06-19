@@ -25,10 +25,10 @@ export default function MainApp() {
                             path="/"
                             element={
                                 <>
-                                    <PixelSection />
-                                    {/* <Suspense fallback={<Loader />}>
+                                    {/* <PixelSection /> */}
+                                    <Suspense fallback={<Loader />}>
                                         <Section5 />
-                                    </Suspense> */}
+                                    </Suspense>
                                     <Suspense fallback={<Loader />}>
                                         <Section6 />
                                     </Suspense>
