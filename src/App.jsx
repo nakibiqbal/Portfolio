@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import "../public/PixelFont/font.css"
+import "../public/Blockstepped/font.css"
+import "../public/Quicsand/font.css"
 import "./App.css";
 import Lenis from "@studio-freight/lenis";
 import PreLoader from "./PreLoader";

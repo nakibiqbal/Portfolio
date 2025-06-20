@@ -26,8 +26,8 @@
     transform: translateX(-100%);
   }
 }
-
 .span {
   color: white;
-  font-family: "Super Commando 3D";
+  font-family: "Blockstepped";
+  -webkit-text-stroke: 5px green;
 }
