@@ -116,8 +116,6 @@ const PreLoader = ({ setLoading }) => {
                         ref={(el) => (images.current[index] = el)}
                         className={`preloadImage${id}`}
                         src={src}
-                        loading="lazy"
-                        fetchPriority="high"
                         alt={`PICTURE ${id}`}
                     />
                 ))}
