@@ -42,6 +42,7 @@ export default function Images() {
                                 transition={{ duration: 1, ease: customEase }}
                                 key={image.id}
                                 className="notCurrentimages"
+                                loading='lazy'
                             />
                         ))}
                     </motion.div>
@@ -55,6 +56,7 @@ export default function Images() {
                         layoutId={current.id}
                         transition={{ duration: 1, ease: customEase }}
                         src={current.src}
+                        loading='lazy'
                     />
                 )}
 
@@ -80,6 +82,7 @@ export default function Images() {
                             transition={{ duration: 1, ease: customEase }}
                             key={image.id}
                             className="images"
+                            loading='lazy'
                         />
                     ))}
                 </motion.div>

@@ -54,7 +54,7 @@ const PreLoader = ({ setLoading }) => {
         tl.to(counter, {
             value: 95,
             duration: 3,
-            ease: "power1.out",
+            ease: "power4.out",
             onUpdate: () => {
                 if (countingTxt.current)
                     countingTxt.current.textContent = `${Math.round(counter.value)}%`;
@@ -65,7 +65,7 @@ const PreLoader = ({ setLoading }) => {
         tl.to(counter, {
             value: 100,
             duration: 3,
-            ease: "power3.inOut",
+            ease: "power4.out",
             onUpdate: () => {
                 if (countingTxt.current)
                     countingTxt.current.textContent = `${Math.round(counter.value)}%`;
@@ -101,7 +101,7 @@ const PreLoader = ({ setLoading }) => {
         tl.to(images.current[1], { zIndex: 7, duration: 0.1 }, 4.2);
         tl.to(images.current[0], { zIndex: 8, duration: 0.1 }, 4.4);
 
-        tl.to(preloader.current, { opacity: 0, filter: "blur(20px)", duration: 2, ease: "power4.out" }, 4.8);
+        tl.to(preloader.current, { opacity: 0, filter: "blur(10px)", duration: 2, ease: "power4.out" }, 4.8);
     }, { scope: preloader });
 
     return (
@@ -116,6 +116,7 @@ const PreLoader = ({ setLoading }) => {
                         ref={(el) => (images.current[index] = el)}
                         className={`preloadImage${id}`}
                         src={src}
+                        loading="lazy"
                         alt={`PICTURE ${id}`}
                     />
                 ))}

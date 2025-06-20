@@ -75,7 +75,7 @@ const ProjectGallery = ({ list, modal, hoverEl }) => {
                     {
                         list.map(({ img }, index) => {
                             return <div key={index} className="galleryImages" >
-                                <img src={img} alt="PROJECT GALLERY" />
+                                <img src={img} alt="PROJECT GALLERY" loading="lazy" />
                             </div>
                         })
                     }

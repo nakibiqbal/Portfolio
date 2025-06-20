@@ -30,33 +30,39 @@ export const ListData = [
     link: "https://3d-image-gallery-3.vercel.app/"
   },
   {
+    img: "https://ik.imagekit.io/nakibKit/My%20Images/imageG4.png?tr=f-auto,q-auto&updatedAt=1750397444036",
+    label: "Image Gallery 4",
+    id: 6,
+    link: "https://image-gallery-4.vercel.app/"
+  },
+  {
     img: "https://ik.imagekit.io/nakibKit/My%20Images/ScrollParallax.png?tr=f-auto,q-auto&updatedAt=1748281069597",
     label: "Scroll Parallax Effect",
-    id: 6,
+    id: 7,
     link: "https://scroll-parallax-effect.vercel.app/"
   },
   {
     img: "https://ik.imagekit.io/nakibKit/My%20Images/Card.png?tr=f-auto,q-auto&updatedAt=1748281075150",
     label: "Animated Tilt Card",
-    id: 7,
+    id: 8,
     link: "https://animated-tilt-card.vercel.app/"
   },
   {
     img: "https://ik.imagekit.io/nakibKit/My%20Images/navbarV1.png?tr=f-auto,q-auto&updatedAt=1748281067585",
     label: "Navbar Variant 1",
-    id: 8,
+    id: 9,
     link: "https://navbar-var-1.vercel.app/"
   },
   {
     img: "https://ik.imagekit.io/nakibKit/My%20Images/staggeredTxt.png?tr=f-auto,q-auto&updatedAt=1748281067685",
     label: "Staggered Text Animation",
-    id: 9,
+    id: 10,
     link: "https://staggered-text-animation.vercel.app/"
   },
   {
     img: "https://ik.imagekit.io/nakibKit/My%20Images/magnet.png?tr=f-auto,q-auto&updatedAt=1748281099254",
     label: "Magnetic Button",
-    id: 10,
+    id: 11,
     link: "https://interactive-magnetic-btn.vercel.app/"
   },
 ];

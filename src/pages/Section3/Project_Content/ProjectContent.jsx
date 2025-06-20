@@ -43,6 +43,7 @@ const ProjectContent = ({ setModal, list }) => {
                                     duration: 1,
                                     ease: customEase,
                                 }}
+                                loading="lazy"
                             />
 
                             <div className="viewCursorBG viewBtn">

@@ -37,6 +37,7 @@ function Section3() {
             src="https://ik.imagekit.io/nakibKit/My%20Images/bg2.png?tr=f-auto,q-auto&updatedAt=1748281075214"
             className="bgImgThree"
             alt="Background"
+            loading="lazy"
           />        </motion.div>
         <motion.div style={{ y: yReverse }} className="imgBgFourParent">
           <motion.img
@@ -44,6 +45,7 @@ function Section3() {
             src="https://ik.imagekit.io/nakibKit/My%20Images/bg3.png?tr=f-auto,q-auto&updatedAt=1748281075058"
             className="bgImgFour"
             alt="Background"
+            loading="lazy"
           />
         </motion.div>
 
