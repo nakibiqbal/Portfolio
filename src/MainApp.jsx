@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import "./App.css";
 import Navbar from "./Navbar/Navbar";
-import PixelSection from "./pages/PixelSection/PixelSection";
 const Contact = lazy(() => import("./pages/Contact/Contact"));
 const Section2 = lazy(() => import("./pages/Section2/Section2"));
 const Section3 = lazy(() => import("./pages/Section3/Section3"));
@@ -25,7 +24,6 @@ export default function MainApp() {
                             path="/"
                             element={
                                 <>
-                                    <PixelSection />
                                     <Suspense fallback={<Loader />}>
                                         <Section5 />
                                     </Suspense>

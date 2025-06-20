@@ -117,6 +117,7 @@ const PreLoader = ({ setLoading }) => {
                         className={`preloadImage${id}`}
                         src={src}
                         loading="lazy"
+                        fetchPriority="high"
                         alt={`PICTURE ${id}`}
                     />
                 ))}

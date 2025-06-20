@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function useStateHook() {
 
@@ -42,23 +42,9 @@ export default function useStateHook() {
         setHoveredCardId(null);
     };
 
-
-    useEffect(() => {
-        const updateBoxCount = () => {
-            const boxesAcross = Math.ceil(window.innerWidth / 100);
-            const boxesDown = Math.ceil(window.innerHeight / 100);
-            setBoxCount(boxesAcross * boxesDown);
-        };
-        updateBoxCount();
-        window.addEventListener("resize", updateBoxCount);
-        return () => window.removeEventListener("resize", updateBoxCount);
-    }, []);
-
-
     return {
         isClick,
         setIsClick,
-        boxCount,
         hoveredCardId,
         shadowPos,
         handleMouseMove,
