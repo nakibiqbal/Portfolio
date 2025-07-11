@@ -98,7 +98,7 @@ const PreLoader = ({ setLoading }) => {
             fontSize: "6vw",
         }, 2);
 
-        // tl.to(preloader.current, { opacity: 0, filter: "blur(10px)", duration: 2, ease: "power4.out" }, 5);
+        tl.to(preloader.current, { opacity: 0, filter: "blur(10px)", duration: 2, ease: "power4.out" }, 5);
     }, { scope: preloader });
 
     useEffect(() => {
