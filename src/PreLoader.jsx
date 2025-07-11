@@ -1,10 +1,10 @@
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import "./PreLoader.css";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const PreLoader = ({ setLoading }) => {
-    const imageOne = [
+    const images = [
         {
             id: 1,
             src: "https://ik.imagekit.io/nakibKit/My%20Images/edit8.jpg?tr=f-auto,q-auto&updatedAt=1748687120430",
@@ -38,11 +38,12 @@ const PreLoader = ({ setLoading }) => {
             src: "https://ik.imagekit.io/nakibKit/My%20Images/edit2.jpg?tr=f-auto,q-auto&updatedAt=1748281091838",
         },
     ];
+    const [current, setCurrent] = useState(0);
+    const imgRef = useRef(null);
 
     const preloader = useRef(null);
-    const images = useRef([]);
     const countingTxt = useRef(null);
-    const maskDiv = useRef(null);
+    const syncTxt = useRef(null);
 
     useGSAP(() => {
         const tl = gsap.timeline({
@@ -59,7 +60,7 @@ const PreLoader = ({ setLoading }) => {
                 if (countingTxt.current)
                     countingTxt.current.textContent = `${Math.round(counter.value)}%`;
             }
-        }, 0.5);
+        }, 2);
 
         // Then slower count: 95% → 100%
         tl.to(counter, {
@@ -70,55 +71,68 @@ const PreLoader = ({ setLoading }) => {
                 if (countingTxt.current)
                     countingTxt.current.textContent = `${Math.round(counter.value)}%`;
             }
+        }, 2.5);
+
+        tl.to(syncTxt.current, {
+            ease: "power4.out",
+            duration: 1,
+            left: 0,
+            fontSize: "4vw",
+        }, 1);
+        tl.to(countingTxt.current, {
+            right: 0,
+            ease: "power4.out",
+            duration: 1,
+            fontSize: "4vw",
+        }, 1);
+        tl.to(syncTxt.current, {
+            ease: "power4.out",
+            duration: 1,
+            top: 0,
+            fontSize: "6vw",
+        }, 2);
+        tl.to(countingTxt.current, {
+            bottom: 0,
+            ease: "power4.out",
+            duration: 1,
+            fontSize: "6vw",
         }, 2);
 
-        tl.fromTo(maskDiv.current, { width: 0 }, { width: "25vw", duration: 1, ease: "power4.out", }, 0.5)
-
-        // Animate images 
-        tl.fromTo(images.current,
-            {
-                clipPath: "polygon(50% 41%, 50% 41%, 50% 60%, 50% 60%)",
-            },
-            {
-                clipPath: "polygon(100% 41%, 0% 41%, 0% 60%, 100% 60%)",
-                duration: 1,
-                ease: "power4.out",
-            }, 1.3);
-        tl.to(images.current,
-            {
-                clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)",
-                duration: 1.5,
-                ease: "power4.out",
-            }, 2.3);
-
-        // Z-index changes
-        tl.to(images.current[7], { zIndex: 1, duration: 0.1 }, 3);
-        tl.to(images.current[6], { zIndex: 2, duration: 0.1 }, 3.2);
-        tl.to(images.current[5], { zIndex: 3, duration: 0.1 }, 3.4);
-        tl.to(images.current[4], { zIndex: 4, duration: 0.1 }, 3.6);
-        tl.to(images.current[3], { zIndex: 5, duration: 0.1 }, 3.8);
-        tl.to(images.current[2], { zIndex: 6, duration: 0.1 }, 4);
-        tl.to(images.current[1], { zIndex: 7, duration: 0.1 }, 4.2);
-        tl.to(images.current[0], { zIndex: 8, duration: 0.1 }, 4.4);
-
-        tl.to(preloader.current, { opacity: 0, filter: "blur(10px)", duration: 2, ease: "power4.out" }, 4.8);
+        tl.to(preloader.current, { opacity: 0, filter: "blur(10px)", duration: 2, ease: "power4.out" }, 5);
     }, { scope: preloader });
+
+    useEffect(() => {
+        let isMounted = true;
+        const animateImage = () => {
+            if (!isMounted) return;
+            // Fade in
+            gsap.fromTo(imgRef.current, { opacity: 1 }, { opacity: 1, duration: 0.001 });
+            // Fade out after delay
+            gsap.to(imgRef.current, {
+                opacity: 1,
+                duration: 0.001,
+                delay: 0.1,
+                onComplete: () => {
+                    if (!isMounted) return;
+                    setCurrent((prev) => (prev + 1) % images.length);
+                }
+            });
+        };
+        animateImage();
+        // Re-run animation when current changes
+        return () => { isMounted = false; };
+    }, [current]);
 
     return (
         <div ref={preloader} className="preloader">
             <div className="preLoaderTxt">
-                <p>Synchronizing</p>
-
-                <div ref={maskDiv} className="maskDiv" />
-                {imageOne.map(({ id, src }, index) => (
-                    <img
-                        key={id}
-                        ref={(el) => (images.current[index] = el)}
-                        className={`preloadImage${id}`}
-                        src={src}
-                        alt={`PICTURE ${id}`}
-                    />
-                ))}
+                <p ref={syncTxt} >Synchronizing</p>
+                <img
+                    ref={imgRef}
+                    key={images[current].id}
+                    src={images[current].src}
+                    alt={`PICTURE ${images[current].id}`}
+                />
                 <p ref={countingTxt}>0%</p>
             </div>
         </div>
