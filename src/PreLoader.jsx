@@ -76,11 +76,11 @@ const PreLoader = ({ setLoading }) => {
         tl.to(syncTxt.current, {
             ease: "power4.out",
             duration: 1,
-            left: 0,
+            left: "2vw",
             fontSize: "4vw",
         }, 1);
         tl.to(countingTxt.current, {
-            right: 0,
+            right: "2vw",
             ease: "power4.out",
             duration: 1,
             fontSize: "4vw",
@@ -88,17 +88,17 @@ const PreLoader = ({ setLoading }) => {
         tl.to(syncTxt.current, {
             ease: "power4.out",
             duration: 1,
-            top: 0,
+            top: "4vw",
             fontSize: "6vw",
         }, 2);
         tl.to(countingTxt.current, {
-            bottom: 0,
+            bottom: "4vw",
             ease: "power4.out",
             duration: 1,
             fontSize: "6vw",
         }, 2);
 
-        tl.to(preloader.current, { opacity: 0, filter: "blur(10px)", duration: 2, ease: "power4.out" }, 5);
+        // tl.to(preloader.current, { opacity: 0, filter: "blur(10px)", duration: 2, ease: "power4.out" }, 5);
     }, { scope: preloader });
 
     useEffect(() => {

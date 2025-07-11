@@ -27,7 +27,8 @@ function App() {
   return (
     <>
 
-      {loading ? <PreLoader setLoading={setLoading} /> : <MainApp />}
+      <PreLoader setLoading={setLoading} />
+      {/* {loading ? <PreLoader setLoading={setLoading} /> : <MainApp />} */}
 
     </>
   );

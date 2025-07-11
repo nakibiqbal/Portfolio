@@ -6,7 +6,7 @@
   align-items: center;
   overflow: hidden;
   position: fixed;
-  background: black;
+  background: white;
   z-index: 99999999999999;
 }
 
@@ -40,6 +40,6 @@
   height: 20vw;
   object-fit: cover;
   position: absolute;
-  right: 0;
-  bottom: 7.5vw;
+  right: 2vw;
+  bottom: 12vw;
 }
