@@ -14,12 +14,12 @@ const Section6 = () => {
     {
       id: 1,
       skill: "Interactive Landing Pages",
-      desc: "I design and develop visually stunning, scroll-driven landing pages with smooth animations and creative effects using React, GSAP, and Lenis.",
+      desc: "I design and develop visually stunning, scroll-driven landing pages with smooth animations and creative effects using Next.js, TypeScript, GSAP, and Lenis.",
     },
     {
       id: 2,
-      skill: "Figma to React",
-      desc: "I transform Figma designs into fully functional, responsive React applications while maintaining design fidelity.",
+      skill: "Figma to Next.js",
+      desc: "I transform Figma designs into fully functional, responsive Next.js applications while maintaining design fidelity.",
     },
     {
       id: 3,
@@ -29,7 +29,7 @@ const Section6 = () => {
     {
       id: 4,
       skill: "Complex Animations",
-      desc: "I create complex animations in React using GSAP and Framer Motion to deliver smooth, engaging, and highly interactive user experiences.",
+      desc: "I create complex animations in Next.js using GSAP and Framer Motion to deliver smooth, engaging, and highly interactive user experiences.",
     },
     {
       id: 5,

@@ -18,6 +18,7 @@ section#section6 {
   flex-wrap: wrap;
   gap: 10px;
   align-content: center;
+  z-index: 9;
 }
 .creative-tilt-card {
   background: black;
