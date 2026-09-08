@@ -1,6 +1,8 @@
 import "./Section5.css";
 import { useState, useEffect, useRef } from "react";
+import { RiNextjsFill } from "react-icons/ri";
 import { FaReact } from "react-icons/fa";
+import { BiLogoTypescript } from "react-icons/bi";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { SiGreensock } from "react-icons/si";
 import MainVariant1 from "./Main_Variant1/MainVariant1";
@@ -125,6 +127,14 @@ const Section5 = () => {
           <p>
             <SiGreensock />
             <span>GSAP</span>
+          </p>
+          <p>
+            <RiNextjsFill />
+            <span>Next.js</span>
+          </p>
+          <p>
+            <BiLogoTypescript />
+            <span>Typescript</span>
           </p>
         </div>
       </div>
