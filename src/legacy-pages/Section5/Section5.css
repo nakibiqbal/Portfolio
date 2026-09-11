@@ -23,6 +23,7 @@
   justify-content: center;
   align-items: flex-start;
   height: 12rem;
+  z-index: 1;
 }
 .mainTextVariant p {
   mix-blend-mode: difference;
