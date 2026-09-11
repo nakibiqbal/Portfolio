@@ -3,6 +3,15 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import "./PreLoader.css";
 import { useEffect, useRef, useState } from "react";
+import loadingImg1 from "@/src/assets/MyPhotos/edit8.webp";
+import loadingImg2 from "@/src/assets/MyPhotos/n4.webp";
+import loadingImg3 from "@/src/assets/MyPhotos/edit6.webp";
+import loadingImg4 from "@/src/assets/MyPhotos/edit3.webp";
+import loadingImg5 from "@/src/assets/MyPhotos/NAKIB8.webp";
+import loadingImg6 from "@/src/assets/MyPhotos/NAKIB5.webp";
+import loadingImg7 from "@/src/assets/MyPhotos/n3.webp";
+import loadingImg8 from "@/src/assets/MyPhotos/edit2.webp";
+import Image from "next/image";
 
 type PreLoaderProps = {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
@@ -12,35 +21,35 @@ const PreLoader = ({ setLoading }: PreLoaderProps) => {
   const images = [
     {
       id: 1,
-      src: "https://ik.imagekit.io/nakibKit/My%20Images/edit8.jpg?tr=f-auto,q-auto&updatedAt=1748687120430",
+      src: loadingImg1,
     },
     {
       id: 2,
-      src: "https://ik.imagekit.io/nakibKit/My%20Images/n4.jpg?tr=f-auto,q-auto&updatedAt=1748281069197",
+      src: loadingImg2,
     },
     {
       id: 3,
-      src: "https://ik.imagekit.io/nakibKit/My%20Images/edit6.jpg?tr=f-auto,q-auto&updatedAt=1748281110269",
+      src: loadingImg3,
     },
     {
       id: 4,
-      src: "https://ik.imagekit.io/nakibKit/My%20Images/edit3.jpg?tr=f-auto,q-auto&updatedAt=1748281109191",
+      src: loadingImg4,
     },
     {
       id: 5,
-      src: "https://ik.imagekit.io/nakibKit/My%20Images/NAKIB8.jpg?tr=f-auto,q-auto&updatedAt=1748281108479",
+      src: loadingImg5,
     },
     {
       id: 6,
-      src: "https://ik.imagekit.io/nakibKit/My%20Images/NAKIB5.jpg?tr=f-auto,q-auto&updatedAt=1748281068345",
+      src: loadingImg6,
     },
     {
       id: 7,
-      src: "https://ik.imagekit.io/nakibKit/My%20Images/n3.jpg?tr=f-auto,q-auto&updatedAt=1748281069145",
+      src: loadingImg7,
     },
     {
       id: 8,
-      src: "https://ik.imagekit.io/nakibKit/My%20Images/edit2.jpg?tr=f-auto,q-auto&updatedAt=1748281091838",
+      src: loadingImg8,
     },
   ];
   const [current, setCurrent] = useState(0);
@@ -129,7 +138,7 @@ const PreLoader = ({ setLoading }: PreLoaderProps) => {
 
       tl.to(
         preloader.current,
-        { opacity: 0, filter: "blur(10px)", duration: 2, ease: "power4.out" },
+        { opacity: 0, duration: 2, ease: "power4.out" },
         5,
       );
     },
@@ -137,42 +146,23 @@ const PreLoader = ({ setLoading }: PreLoaderProps) => {
   );
 
   useEffect(() => {
-    let isMounted = true;
-    const animateImage = () => {
-      if (!isMounted) return;
-      // Fade in
-      gsap.fromTo(
-        imgRef.current,
-        { opacity: 1 },
-        { opacity: 1, duration: 0.001 },
-      );
-      // Fade out after delay
-      gsap.to(imgRef.current, {
-        opacity: 1,
-        duration: 0.001,
-        delay: 0.1,
-        onComplete: () => {
-          if (!isMounted) return;
-          setCurrent((prev) => (prev + 1) % images.length);
-        },
-      });
-    };
-    animateImage();
-    // Re-run animation when current changes
-    return () => {
-      isMounted = false;
-    };
-  }, [current]);
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div ref={preloader} className="preloader">
       <div className="preLoaderTxt">
         <p ref={syncTxt}>Synchronizing</p>
-        <img
+        <Image
           ref={imgRef}
-          key={images[current].id}
           src={images[current].src}
           alt={`PICTURE ${images[current].id}`}
+          placeholder="blur"
+          priority
         />
         <p ref={countingTxt}>0%</p>
       </div>
