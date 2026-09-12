@@ -1,15 +1,16 @@
 import { useRef } from "react";
 import gsap from "gsap";
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Section6.css";
 import useScreenSize from "../../hooks/ScreenSizeHook/useScreenSize";
 import useStateHook from "../../hooks/CustomStateHook/useStateHook";
+import Image from "next/image";
+import bg6 from "@/src/assets/backgrounds/bg6.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Section6 = () => {
-
   const cardData = [
     {
       id: 1,
@@ -42,30 +43,33 @@ const Section6 = () => {
     },
   ];
 
-  const { hoveredCardId, shadowPos, handleMouseMove, handleMouseLeave } = useStateHook();
-  const isSmallScreen = useScreenSize(983)
+  const { hoveredCardId, shadowPos, handleMouseMove, handleMouseLeave } =
+    useStateHook();
+  const isSmallScreen = useScreenSize(983);
 
-  const secRef = useRef(null)
+  const secRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: secRef,
-    offset: ["start end", "end center"]
-  })
-  const y = useTransform(scrollYProgress, [0, 1], [isSmallScreen ? -100 : -200, isSmallScreen ? 1000 : 200])
-
+    offset: ["start end", "end center"],
+  });
+  const y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [isSmallScreen ? -100 : -200, isSmallScreen ? 1000 : 200],
+  );
 
   return (
     <section ref={secRef} id="section6">
       <motion.div style={{ y }} className="bgImgParent">
-        <img
-          loading="lazy"
-          src="https://ik.imagekit.io/nakibKit/My%20Images/bg6.png?tr=f-auto,q-auto&updatedAt=1748281075297"
+        <Image
+          src={bg6}
           className="bgOne"
           alt="Background"
+          // placeholder="blur"
         />
       </motion.div>
       <div className="cardContainer">
         {cardData.map((card) => (
-
           <div
             key={card.id}
             className="creative-tilt-card"
@@ -90,9 +94,7 @@ const Section6 = () => {
               {card.desc && <p>{card.desc}</p>}
             </div>
           </div>
-
         ))}
-
       </div>
     </section>
   );

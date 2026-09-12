@@ -1,52 +1,53 @@
+import img1 from "@/src/assets/floatingImgs/pinImg1.jpg";
+import img2 from "@/src/assets/floatingImgs/pinImg2.jpg";
+import img3 from "@/src/assets/floatingImgs/pinImg3.jpg";
+import img4 from "@/src/assets/floatingImgs/pinImg4.jpg";
+import img5 from "@/src/assets/floatingImgs/pinImg5.jpg";
+import img6 from "@/src/assets/floatingImgs/pinImg6.jpg";
+import img7 from "@/src/assets/floatingImgs/pinImg7.jpg";
+import img8 from "@/src/assets/floatingImgs/pinImg8.jpg";
+import img9 from "@/src/assets/floatingImgs/pinImg9.jpg";
+import img10 from "@/src/assets/floatingImgs/pinImg10.jpg";
+import img11 from "@/src/assets/floatingImgs/pinImg11.jpg";
+import img12 from "@/src/assets/floatingImgs/pinImg12.jpg";
+import img13 from "@/src/assets/floatingImgs/pinImg13.jpg";
+import img14 from "@/src/assets/floatingImgs/pinImg14.jpg";
+import img15 from "@/src/assets/floatingImgs/pinImg15.jpg";
+import img16 from "@/src/assets/floatingImgs/pinImg16.jpg";
+import img17 from "@/src/assets/floatingImgs/pinImg17.jpg";
+import img18 from "@/src/assets/floatingImgs/pinImg18.jpg";
+import img19 from "@/src/assets/floatingImgs/pinImg19.jpg";
+import img20 from "@/src/assets/floatingImgs/pinImg20.jpg";
+import img21 from "@/src/assets/floatingImgs/pinImg21.jpg";
+import img22 from "@/src/assets/floatingImgs/pinImg22.jpg";
+import img23 from "@/src/assets/floatingImgs/pinImg23.jpg";
+import img24 from "@/src/assets/floatingImgs/pinImg24.jpg";
+import img25 from "@/src/assets/floatingImgs/pinImg25.jpg";
+
 export const Data = [
-    // { id: 1, src: "https://ik.imagekit.io/nakibKit/My%20Images/ami1.jpg?tr=f-auto,q-auto&updatedAt=1748281073506", className: "class1" },
-    // { id: 3, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit8.jpg?tr=f-auto,q-auto&updatedAt=1748281108479", className: "class2" },
-    // { id: 2, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit3.jpg?tr=f-auto,q-auto&updatedAt=1748281109191", className: "class3" },
-    // { id: 4, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit2.jpg?tr=f-auto,q-auto&updatedAt=1748281091838", className: "class4" },
-    // { id: 5, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit16.jpg?tr=f-auto,q-auto&updatedAt=1748281098948", className: "class5" },
-    // { id: 6, src: "https://ik.imagekit.io/nakibKit/My%20Images/n3.jpg?tr=f-auto,q-auto&updatedAt=1748281069145", className: "class6" },
-    // { id: 7, src: "https://ik.imagekit.io/nakibKit/My%20Images/n4.jpg?tr=f-auto,q-auto&updatedAt=1748281069197", className: "class7" },
-    // { id: 8, src: "https://ik.imagekit.io/nakibKit/My%20Images/NAKIB5.jpg?tr=f-auto,q-auto&updatedAt=1748281068345", className: "class8" },
-    // { id: 9, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit6.jpg?tr=f-auto,q-auto&updatedAt=1748281110269", className: "class9" },
-    // { id: 10, src: "https://ik.imagekit.io/nakibKit/My%20Images/NAKIB8.jpg?tr=f-auto,q-auto&updatedAt=1748281071415", className: "class10" },
-    // { id: 11, src: "https://ik.imagekit.io/nakibKit/My%20Images/n2.jpg?tr=f-auto,q-auto&updatedAt=1748281069511", className: "class11" },
-    // { id: 12, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit12.jpg?tr=f-auto,q-auto&updatedAt=1748281101344", className: "class12" },
-    // { id: 13, src: "https://ik.imagekit.io/nakibKit/My%20Images/wall.jpg?tr=f-auto,q-auto&updatedAt=1748281075004", className: "class13" },
-    // { id: 14, src: "https://ik.imagekit.io/nakibKit/My%20Images/n3.jpg?tr=f-auto,q-auto&updatedAt=1748281069145", className: "class14" },
-    // { id: 15, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit2.jpg?tr=f-auto,q-auto&updatedAt=1748281091838", className: "class15" },
-    // { id: 16, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit3.jpg?tr=f-auto,q-auto&updatedAt=1748281109191", className: "class16" },
-    // { id: 17, src: "https://ik.imagekit.io/nakibKit/My%20Images/NAKIB8.jpg?tr=f-auto,q-auto&updatedAt=1748281071415", className: "class17" },
-    // { id: 18, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit12.jpg?tr=f-auto,q-auto&updatedAt=1748281101344", className: "class18" },
-    // { id: 19, src: "https://ik.imagekit.io/nakibKit/My%20Images/NAKIB5.jpg?tr=f-auto,q-auto&updatedAt=1748281068345", className: "class19" },
-    // { id: 20, src: "https://ik.imagekit.io/nakibKit/My%20Images/n4.jpg?tr=f-auto,q-auto&updatedAt=1748281069197", className: "class20" },
-    // { id: 21, src: "https://ik.imagekit.io/nakibKit/My%20Images/ami1.jpg?tr=f-auto,q-auto&updatedAt=1748281073506", className: "class21" },
-    // { id: 22, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit6.jpg?tr=f-auto,q-auto&updatedAt=1748281110269", className: "class22" },
-    // { id: 23, src: "https://ik.imagekit.io/nakibKit/My%20Images/edit16.jpg?tr=f-auto,q-auto&updatedAt=1748281098948", className: "class23" },
-    // { id: 24, src: "https://ik.imagekit.io/nakibKit/My%20Images/n2.jpg?tr=f-auto,q-auto&updatedAt=1748281069511", className: "class24" },
-    // { id: 25, src: "https://ik.imagekit.io/nakibKit/My%20Images/wall.jpg?tr=f-auto,q-auto&updatedAt=1748281075004", className: "class25" },
-    { id: 1, src: "https://i.pinimg.com/736x/32/2d/35/322d35d6fa5f40244ff80b86e77d3985.jpg", className: "class1" },
-    { id: 2, src: "https://i.pinimg.com/736x/ba/67/04/ba6704c4d9b8528bfe45047ce6a4cfbb.jpg", className: "class2" },
-    { id: 3, src: "https://i.pinimg.com/736x/53/89/ee/5389eef7d9548a57edcc79254b4ef80a.jpg", className: "class3" },
-    { id: 4, src: "https://i.pinimg.com/736x/07/42/c4/0742c4788148effed485d16cf4a611e8.jpg", className: "class4" },
-    { id: 5, src: "https://i.pinimg.com/736x/0f/3f/ff/0f3fff570b4a8c00df5974cf662f8036.jpg", className: "class5" },
-    { id: 6, src: "https://i.pinimg.com/736x/b7/83/2c/b7832c112d922cb6d9d02bdba930f152.jpg", className: "class6" },
-    { id: 7, src: "https://i.pinimg.com/736x/8f/c9/22/8fc92233411c4462bd8dbdadf7a3dca5.jpg", className: "class7" },
-    { id: 8, src: "https://i.pinimg.com/736x/1a/e5/54/1ae554e17b32788ed1d99a059aa46dbb.jpg", className: "class8" },
-    { id: 9, src: "https://i.pinimg.com/736x/9c/05/63/9c05636db2c6ba534e08d1b81e0fee33.jpg", className: "class9" },
-    { id: 10, src: "https://i.pinimg.com/736x/7d/82/7f/7d827ffee39697745d29a2570eda9fcd.jpg", className: "class10" },
-    { id: 11, src: "https://i.pinimg.com/736x/35/c2/f7/35c2f7f9af4f086f22a7f3d1eb8986a4.jpg", className: "class11" },
-    { id: 12, src: "https://i.pinimg.com/736x/9a/d1/2b/9ad12b40355df12cedd8ae8d84820a09.jpg", className: "class12" },
-    { id: 13, src: "https://i.pinimg.com/736x/7d/76/ec/7d76ecb26bac2fde8d08c7223b4092df.jpg", className: "class13" },
-    { id: 14, src: "https://i.pinimg.com/736x/c3/73/32/c37332955e762441ea55909a68820832.jpg", className: "class14" },
-    { id: 15, src: "https://i.pinimg.com/736x/ab/9d/12/ab9d126c53f49f06cdcc433fe87aba3c.jpg", className: "class15" },
-    { id: 16, src: "https://i.pinimg.com/736x/21/67/ec/2167ecec0be2cd5ab04f6c900b2081a8.jpg", className: "class16" },
-    { id: 17, src: "https://i.pinimg.com/736x/dc/4b/97/dc4b970eba3e94621c1e629d4e8c7259.jpg", className: "class17" },
-    { id: 18, src: "https://i.pinimg.com/736x/d5/c2/ef/d5c2effb94f261cebe3c5d2329b065db.jpg", className: "class18" },
-    { id: 19, src: "https://i.pinimg.com/736x/3f/83/58/3f835893207d4aeaf0c0adfa48d580b5.jpg", className: "class19" },
-    { id: 20, src: "https://i.pinimg.com/736x/70/ff/78/70ff781605e40c4b5b3a32f7d5d631e6.jpg", className: "class20" },
-    { id: 21, src: "https://i.pinimg.com/736x/33/55/8e/33558e607f64d91f71c51e4a16d9eac1.jpg", className: "class21" },
-    { id: 22, src: "https://i.pinimg.com/736x/41/e7/0b/41e70b3939db8efb5e460f059a463dfe.jpg", className: "class22" },
-    { id: 23, src: "https://i.pinimg.com/736x/e9/16/e2/e916e267b3e30f6fcbf7bd8c0fdb6d67.jpg", className: "class23" },
-    { id: 24, src: "https://i.pinimg.com/736x/23/a0/0e/23a00e4fc0e6a44a8d60c1e8fe335534.jpg", className: "class24" },
-    { id: 25, src: "https://i.pinimg.com/736x/1f/f5/e7/1ff5e7fa3e77bf69fda2099f299f3289.jpg", className: "class25" },
+  { src: img1, className: "class1" },
+  { src: img2, className: "class2" },
+  { src: img3, className: "class3" },
+  { src: img4, className: "class4" },
+  { src: img5, className: "class5" },
+  { src: img6, className: "class6" },
+  { src: img7, className: "class7" },
+  { src: img8, className: "class8" },
+  { src: img9, className: "class9" },
+  { src: img10, className: "class10" },
+  { src: img11, className: "class11" },
+  { src: img12, className: "class12" },
+  { src: img13, className: "class13" },
+  { src: img14, className: "class14" },
+  { src: img15, className: "class15" },
+  { src: img16, className: "class16" },
+  { src: img17, className: "class17" },
+  { src: img18, className: "class18" },
+  { src: img19, className: "class19" },
+  { src: img20, className: "class20" },
+  { src: img21, className: "class21" },
+  { src: img22, className: "class22" },
+  { src: img23, className: "class23" },
+  { src: img24, className: "class24" },
+  { src: img25, className: "class25" },
 ];

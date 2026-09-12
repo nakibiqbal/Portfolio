@@ -75,6 +75,7 @@ section#section6 {
   width: 100%;
   z-index: 0;
   position: relative;
+  filter: blur(5px);
 }
 img.bgOne {
   width: 40rem;

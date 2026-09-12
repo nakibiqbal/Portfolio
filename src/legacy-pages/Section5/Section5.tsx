@@ -13,6 +13,8 @@ import MainVariant5 from "./Main_Variant5/MainVariant5";
 import MainVariant6 from "./Main_Variant6/MainVariant6";
 import MainVariant7 from "./Main_Variant7/MainVariant7";
 import MainVariant8 from "./Main_Variant8/MainVariant8";
+import Image from "next/image";
+import bg1 from "@/src/assets/backgrounds/bg1.webp";
 
 // Custom hook to handle interval-based updates
 const useVariantInterval = (durations: number[]) => {
@@ -81,11 +83,11 @@ const Section5 = () => {
   return (
     <section id="section5">
       <div className="imgBgTwoParent">
-        <img
-          src="https://ik.imagekit.io/nakibKit/My%20Images/bg1.png?tr=f-auto,q-auto&updatedAt=1748281300815"
+        <Image
+          src={bg1}
           className="bgImgTwo"
           alt="Background"
-          loading="lazy"
+          // placeholder="blur"
         />
       </div>
 

@@ -6,11 +6,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Data } from "./data";
 import useScreenSize from "../../hooks/ScreenSizeHook/useScreenSize";
+import Image, { StaticImageData } from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
 type DataItem = {
-  src: string;
+  src: StaticImageData;
   className: string;
 };
 
@@ -67,7 +68,12 @@ const ScrollFunction = ({
     <>
       <div ref={childRef} className="childImgDiv">
         <div className={`imagesSize ${className}`}>
-          <img src={src} loading="lazy" />
+          <Image
+            src={src}
+            placeholder="blur"
+            loading="lazy"
+            alt="Floating Images"
+          />
         </div>
       </div>
     </>
