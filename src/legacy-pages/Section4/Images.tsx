@@ -68,12 +68,7 @@ const ScrollFunction = ({
     <>
       <div ref={childRef} className="childImgDiv">
         <div className={`imagesSize ${className}`}>
-          <Image
-            src={src}
-            placeholder="blur"
-            loading="lazy"
-            alt="Floating Images"
-          />
+          <Image src={src} placeholder="blur" alt="Floating Images" />
         </div>
       </div>
     </>
